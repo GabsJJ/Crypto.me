@@ -10,7 +10,7 @@
 
 	background-color: black;
 	color: white;
-	font-family:MS PMincho;
+	font-family:'Maven Pro', sans-serif;
 	font-size: 50px;
 	box-shadow: -1px 3px 3px black;
 }
@@ -32,4 +32,12 @@
 body
 {
 	background-color: #808080;
+    overflow: hidden;
+}
+
+#titulo
+{
+	color: white;
+	font-family:'Maven Pro', sans-serif;
+	font-size: 40px;
 }
