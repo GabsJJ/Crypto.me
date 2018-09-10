@@ -4,14 +4,23 @@ function sleep(ms) {
 
 async function mouseOverMenu(ele, txt)
 {
-	for(i = 0; i <= 5; i++)
+	for(i = 0; i < txt.length; i++)
 	{
-		var nPalavra = "";
-		for(cha = 0; cha < txt.length; cha++)
-		{
-			var pala = Math.floor(Math.random() * 6);
+		var comecoPalavra = "";
 
-			switch(pala)
+		try
+		{
+			comecoPalavra = txt.substring(0, i - 1);
+		}
+		catch{}
+
+		var nPalavra = "";
+
+		for(cha = 0; cha <= txt.length - i; cha++)
+		{
+			var carac = Math.floor(Math.random() * 6);
+
+			switch(carac)
 			{
 				case 0:
 					nPalavra += "c"
@@ -39,8 +48,8 @@ async function mouseOverMenu(ele, txt)
 			}
 		}
 
-		ele.innerHTML = nPalavra;
-		await sleep(200);
+		ele.innerHTML = comecoPalavra + nPalavra;
+		await sleep(100);
 	}
 
 	ele.innerHTML = txt;
