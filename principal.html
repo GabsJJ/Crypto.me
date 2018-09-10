@@ -3,13 +3,15 @@
 	<head>
 		<title>Crypto.me</title>
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
+		<link rel="stylesheet" type="text/css" href="css/estilo-principal.css">
+		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
 		<script type="text/javascript" src="js/jsGeral.js"></script>
 	</head>
 
-	<body>
+	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
 		<div id="cabecalho">
 		 	<ul>
-		 		<li>Crypto.me &nbsp&nbsp&nbsp</li>
+		 		<li id="logo">Crypto.me</li>
 		 		<li onmouseover="mouseOverMenu(this, 'Home');">Home</li>
 		 		<li>-</li>
 		 		<li onmouseover="mouseOverMenu(this, 'Aprenda');">Aprenda</li>
@@ -17,7 +19,8 @@
 		 		<li onmouseover="mouseOverMenu(this, 'Quiz');">Quiz</li>
 		 		<li>-</li>
 		 		<li onmouseover="mouseOverMenu(this, 'Tradutor');">Tradutor</li>
-		 	</ul>
+			 </ul>
+			 
 		</div>
 	</body>
 </html>
