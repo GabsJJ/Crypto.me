@@ -1,12 +1,12 @@
 #cabecalho
 {
-	width: 100%;
-	height: 60px;
-
-	position: absolute;
+    position: absolute;
 	top: 0px;
 	left: 0px;
 	margin: 0px;
+    
+	width: 100%;
+	height: 60px;
 
 	background-color: black;
 	color: white;
@@ -16,19 +16,24 @@
 	font-family: 'Maven Pro', sans-serif;
 }
 
-#cabecalho ul li
-{
-	display: inline;
-    top: 8px;  
-}
-
 #cabecalho ul
 {
 	position: absolute;
-	top: 0px;
-	left: 230px;
+	top: 2px;
+	left: 330px;
 	margin: 0px;
 	padding: 0px;
+}
+
+#cabecalho ul li
+{
+    display: inline;
+}
+
+#logo{
+    position: absolute; 
+    top: 5px;  
+    left: -340px;
 }
 
 body
@@ -36,11 +41,4 @@ body
 	background-color: #808080;
     overflow: hidden;
 	font-family: 'Maven Pro', sans-serif;
-}
-
-#titulo
-{
-	color: white;
-	font-family:'Maven Pro', sans-serif;
-	font-size: 40px;
 }
