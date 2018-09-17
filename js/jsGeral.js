@@ -1,3 +1,4 @@
+var carregar = 0;
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -53,4 +54,5 @@ async function mouseOverMenu(ele, txt)
 	}
 
 	ele.innerHTML = txt;
+	carregar = 1;
 }

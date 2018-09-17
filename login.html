@@ -3,11 +3,13 @@
 	<head>
 		<title>Crypto.me</title>
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
+		<link rel="stylesheet" type="text/css" href="css/estilo-login.css">
 		<script type="text/javascript" src="js/jsGeral.js"></script>
 	</head>
 
-	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');
-				  mouseOverMenu(document.getElementById('titulo'), 'Torne-se um Crypto');">
+	<body onload="mouseOverMenu(logo, 'Crypto.me');
+				  mouseOverMenu(t1, 'Revele seu Crypto');
+				  mouseOverMenu(t2, 'Torne-se um Crypto');">
 		<div id="cabecalho">
 		 	<ul>
 		 		<li id="logo">Crypto.me</li> &nbsp&nbsp&nbsp
@@ -22,10 +24,18 @@
 		</div>
 
 		<br><br><br><br>
-		<div id="titulo">Torne-se um Crypto</div>
+		<span class="titulo" id="t1" style="position: absolute; top: 80px;">Revele seu Crypto</span>
 
-		<div id="caixa">
-			
+		<div id="caixa" style="height: 17%;">
+			<span class="subtitulo" style="position: absolute; left: 1%; top: 1px;">Login</span>
+			<form>
+				<span class="subsubtitulo" style="position: absolute; left: 1%; top: 45px;">Usuário: </span>
+				<input type="text" name="tUsuario" class="caixaDeTexto" maxlength="50" style="position: absolute; left: 8%; top: 49px;">
+				<span class="subsubtitulo" style="position: absolute; left: 1%; top: 85px;">Senha: </span>
+				<input type="text" name="tUsuario" class="caixaDeTexto" maxlength="50" style="position: absolute; left: 8%; top: 89px;">
+			</form>
 		</div>
+
+		<span class="titulo" id="t2" style="position: absolute; top: 300px;">Torne-se um Crypto</span>
 	</body>
 </html>

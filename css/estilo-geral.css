@@ -42,3 +42,24 @@ body
     overflow: hidden;
 	font-family: 'Maven Pro', sans-serif;
 }
+
+.titulo
+{
+	color: white;
+	font-family:'Maven Pro', sans-serif;
+	font-size: 40px;
+}
+
+.subtitulo
+{
+	color: white;
+	font-family:'Maven Pro', sans-serif;
+	font-size: 30px;
+}
+
+.subsubtitulo
+{
+	color: white;
+	font-family:'Maven Pro', sans-serif;
+	font-size: 25px;
+}
