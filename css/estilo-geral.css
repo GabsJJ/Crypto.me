@@ -11,7 +11,7 @@
 	background-color: black;
 	color: white;
 	font-family:'Maven Pro', sans-serif;
-	font-size: 50px;
+	font-size: 40px;
 	box-shadow: -1px 3px 3px black;
 	font-family: 'Maven Pro', sans-serif;
 }
@@ -19,6 +19,7 @@
 #cabecalho ul li
 {
 	display: inline;
+    top: 8px;  
 }
 
 #cabecalho ul
@@ -33,7 +34,7 @@
 body
 {
 	background-color: #808080;
-    	overflow: hidden;
+    overflow: hidden;
 	font-family: 'Maven Pro', sans-serif;
 }
 
