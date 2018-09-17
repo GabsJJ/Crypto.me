@@ -2,3 +2,12 @@
     position: relative;
     left: -230px;
 }
+
+#box-imagem img{
+    position: absolute;
+    width: 650px;
+    height: 450px;
+    border: 6px solid white;
+    border-radius: 10px;
+    top: 90px;
+}
