@@ -21,11 +21,14 @@
     top: 250px;
 }
 
-#box-imagem button{
+#box-imagem a{
     position: relative;
+    text-decoration: none;
+    color: black;
+    border-radius: 35px;
+    box-shadow: 10px 10px 10px solid black;
     left: 350px; 
     top: -30px;
-    border-radius: 20px; 
     border-style: dashed;
     border: 10px solid white;
     background-color: white;
