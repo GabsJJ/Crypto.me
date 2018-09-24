@@ -28,3 +28,15 @@
     background-color: white;
     font-family: 'Maven Pro', sans-serif;
 }
+
+#login {
+    position: absolute;
+    text-align: center;
+    width: 12%;
+    height: 5%;
+    border: 2px solid white;
+    border-radius: 10px;
+    top: 8.5%;
+    left: 86%;
+    cursor: pointer;
+}
