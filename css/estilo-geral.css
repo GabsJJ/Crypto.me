@@ -10,17 +10,17 @@
 
 	background-color: black;
 	color: white;
-	font-family:'Maven Pro', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 40px;
 	box-shadow: -1px 3px 3px black;
-	font-family: 'Maven Pro', sans-serif;
+	
 }
 
 #cabecalho ul
 {
 	position: absolute;
-	top: 2px;
-	left: 330px;
+	top: 7px;
+	left: 370px;
 	margin: 0px;
 	padding: 0px;
 }
@@ -35,7 +35,7 @@
     position: relative;
     left: -230px;
     background-color: gray;
-    top: 5px;
+    top: 1px;
     cursor: pointer;
 }
 
