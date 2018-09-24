@@ -4,11 +4,24 @@
 	border-width: 3px;
 	border-radius: 3px;
 	width: 90%;
-	height: 30%;
+	height: 21%;
 
 	position: absolute;
-	left: 5%;
+	left: 5%;  
 	top: 17%;
+}
+
+#caixa2
+{
+	border: 3px solid white;
+	border-width: 3px;
+	border-radius: 3px;
+	width: 90%;
+	height: 31%;
+
+	position: absolute;
+	left: 5%;  
+	top: 47%;
 }
 
 #caixaDeTexto
