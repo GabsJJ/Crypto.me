@@ -28,6 +28,7 @@
 #cabecalho ul li
 {
     display: inline;
+    cursor: pointer;
 }
 
 #logo{
@@ -35,6 +36,7 @@
     left: -230px;
     background-color: gray;
     top: 5px;
+    cursor: pointer;
 }
 
 body
