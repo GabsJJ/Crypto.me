@@ -31,9 +31,10 @@
 }
 
 #logo{
-    position: absolute; 
-    top: 5px;  
-    left: -340px;
+    position: relative;
+    left: -230px;
+    background-color: gray;
+    top: 5px;
 }
 
 body
