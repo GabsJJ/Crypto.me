@@ -1,5 +1,6 @@
 #cabecalho
 {
+	font-family: 'Roboto Condensed', sans-serif;
     position: absolute;
 	top: 0px;
 	left: 0px;
@@ -10,7 +11,6 @@
 
 	background-color: black;
 	color: white;
-	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 40px;
 	box-shadow: -1px 3px 3px black;
 	
@@ -65,4 +65,13 @@ body
 	color: white;
 	font-family:'Maven Pro', sans-serif;
 	font-size: 25px;
+}
+
+#tituloSombra h1
+{
+	position: absolute;
+	left: 30px;
+	top: 60px;
+	color: white;
+	text-shadow: 3px 3px 3px black;
 }
