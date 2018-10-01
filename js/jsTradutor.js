@@ -21,6 +21,25 @@ function criptografar(mensagem, idCripto)
     return nMensagem;
 }
 
+function descriptografar(mensagem, idCripto)
+{
+    mensagem = mensagem.toUpperCase();
+    var nMensagem = "";
+    
+    switch(idCripto)
+    {
+        case 1:
+            nMensagem = DEScA1Z26(mensagem);
+            break;
+            
+        default:
+            nMensagem = mensagem;
+            break;
+    }
+    
+    return nMensagem;
+}
+
 /* Criptografar */
 function cA1Z26 (mensagem)
 {
@@ -145,4 +164,33 @@ function cA1Z26 (mensagem)
     }
 
     return resul.substring(0, resul.length - 1);
+}
+
+/* Descriptografar */
+function DEScA1Z26(mensagem)
+{
+    var result = "";
+
+    while(mensagem != "")
+    {
+        var localIfem = mensagem.indexOf("-");
+        if(localIfem < 0)
+            parteMensagem = mensagem.substring(0);
+        else
+            var parteMensagem = mensagem.substring(0, localIfem);
+        alert(parteMensagem);
+
+        if(parteMensagem == " ")
+            result += " ";
+        else
+            result += alf[parseInt(parteMensagem) - 1];
+
+        if(localIfem < 0)
+            mensagem = "";
+        else
+            mensagem = mensagem.substring(mensagem.indexOf("-") + 1);
+        alert(mensagem);
+    }
+
+    return result;
 }
