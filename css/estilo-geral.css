@@ -43,31 +43,31 @@ body
 {
 	background-color: #808080;
     overflow: hidden;
-	font-family: 'Maven Pro', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 .titulo
 {
 	color: white;
-	font-family:'Maven Pro', sans-serif;
+	font-family:'Roboto Condensed', sans-serif;
 	font-size: 40px;
 }
 
 .subtitulo
 {
 	color: white;
-	font-family:'Maven Pro', sans-serif;
+	font-family:'Roboto Condensed', sans-serif;
 	font-size: 30px;
 }
 
 .subsubtitulo
 {
 	color: white;
-	font-family:'Maven Pro', sans-serif;
+	font-family:'Roboto Condensed', sans-serif;
 	font-size: 25px;
 }
 
-#tituloSombra h1
+h1
 {
 	position: absolute;
 	left: 30px;
