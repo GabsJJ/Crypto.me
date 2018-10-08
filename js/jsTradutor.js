@@ -174,22 +174,29 @@ function DEScA1Z26(mensagem)
     while(mensagem != "")
     {
         var localIfem = mensagem.indexOf("-");
+        var parteMensagem = "";
         if(localIfem < 0)
             parteMensagem = mensagem.substring(0);
         else
-            var parteMensagem = mensagem.substring(0, localIfem);
-        alert(parteMensagem);
+            parteMensagem = mensagem.substring(0, localIfem);
 
-        if(parteMensagem == " ")
-            result += " ";
-        else
+        if(parteMensagem.indexOf(" ") < 0)
+        {
             result += alf[parseInt(parteMensagem) - 1];
 
-        if(localIfem < 0)
-            mensagem = "";
+            if(localIfem < 0)
+                mensagem = "";
+            else
+                mensagem = mensagem.substring(mensagem.indexOf("-") + 1);
+        }
         else
-            mensagem = mensagem.substring(mensagem.indexOf("-") + 1);
-        alert(mensagem);
+        {
+            parteMensagem = parteMensagem.substring(0, parteMensagem.indexOf(" "));
+
+            result += alf[parseInt(parteMensagem) - 1] + " ";
+
+            mensagem = mensagem.substring(mensagem.indexOf(" ") + 1);
+        }
     }
 
     return result;
