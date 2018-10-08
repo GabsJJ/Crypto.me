@@ -9,7 +9,7 @@ function criptografar(mensagem, idCripto)
     
     switch(idCripto)
     {
-        case 1:
+        case "1":
             nMensagem = cA1Z26(mensagem);
             break;
             
@@ -28,7 +28,7 @@ function descriptografar(mensagem, idCripto)
     
     switch(idCripto)
     {
-        case 1:
+        case "1":
             nMensagem = DEScA1Z26(mensagem);
             break;
             
@@ -44,6 +44,8 @@ function descriptografar(mensagem, idCripto)
 function cA1Z26 (mensagem)
 {
     var resul = "";
+    var continuar = true;
+
     for(var i = 0; i < mensagem.length; i++)
     {
         var letra = mensagem.charAt(i);
@@ -158,6 +160,11 @@ function cA1Z26 (mensagem)
                 resul = resul.substring(0, resul.length - 1);
                 resul += " ";
                 break;
+
+            default:
+                alert("Por favor, não insira caractares que não sejam letras ou espaços!");
+                return " ";
+                break;
         }
         if(letra != " ")
             resul += "-";
@@ -182,7 +189,15 @@ function DEScA1Z26(mensagem)
 
         if(parteMensagem.indexOf(" ") < 0)
         {
-            result += alf[parseInt(parteMensagem) - 1];
+            var r = alf[parseInt(parteMensagem) - 1];
+
+            if(r == undefined)
+            {
+                alert("A entrada possue caractares invalidos para esse tipo de criptografia!");
+                return "";
+            }
+
+            result += r;
 
             if(localIfem < 0)
                 mensagem = "";
@@ -193,7 +208,15 @@ function DEScA1Z26(mensagem)
         {
             parteMensagem = parteMensagem.substring(0, parteMensagem.indexOf(" "));
 
-            result += alf[parseInt(parteMensagem) - 1] + " ";
+            var r = alf[parseInt(parteMensagem) - 1] + " ";
+
+            if(r == undefined)
+            {
+                alert("A entrada possue caractares invalidos para esse tipo de criptografia!");
+                return "";
+            }
+
+            result += r;
 
             mensagem = mensagem.substring(mensagem.indexOf(" ") + 1);
         }

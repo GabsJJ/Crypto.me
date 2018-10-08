@@ -24,5 +24,23 @@
 
     <h1>Tradutor</h1>
 
+    <span class="subtitulo" style="position : absolute; left : 60px; top: 120px;">Entrada</span>
+
+    <input id="txtEntrada" style="position : absolute; left : 60px; top: 160px; width: 602px; height: 20px;">
+
+    <span class="subtitulo" style="position : absolute; left : 60px; top: 210px;">Saída</span>
+
+    <input id="txtSaida" style="position : absolute; left : 60px; top: 250px; width: 602px; height: 20px;">
+
+    <button onclick="document.getElementById('txtSaida').value = criptografar(document.getElementById('txtEntrada').value, document.getElementById('selecione').value);" 
+    style="position : absolute; left : 60px; top: 280px;"">Criptografar</button>
+
+    <button onclick="document.getElementById('txtSaida').value = descriptografar(document.getElementById('txtEntrada').value, document.getElementById('selecione').value);" 
+    style="position : absolute; left : 150px; top: 280px;"">Descriptografar</button>
+
+    <select id="selecione" style="position : absolute; left : 260px; top: 280px; height: 21px;">
+    	<option value="1">A1Z26</option>
+    </select>
+
 	</body>
 </html>
