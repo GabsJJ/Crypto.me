@@ -1,37 +1,118 @@
 <html>
     <head>
 		<title>Crypto.me</title>
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
 		<link rel="stylesheet" type="text/css" href="css/estilo-principal.css">
+
+		<!-- JavaScript e jQuery-->
+		<script type="text/javascript" src="js/jsGeral.js"></script>
+
+		<!-- Fontes -->
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/hover.css">
-		<script type="text/javascript" src="js/jsGeral.js"></script>
+
+		<!-- Materialize -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 
 	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
-    <div id="cabecalho">
-        <ul>
-		 	<li id="logo" onclick='window.open("principal.html","_self")'>Crypto.me</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Home');" onclick='window.open("principal.html","_self")'>Home</li>
-		 	<li>-</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Aprenda');" onclick='window.open("aprenda.html","_self")'>Aprenda</li>
-		 	<li>-</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Quiz');" onclick='window.open("quiz.html","_self")'>Quiz</li>
-		 	<li>-</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Tradutor');" onclick='window.open("tradutor.html","_self")'>Tradutor</li>
-        </ul>
-    </div>
 
-  	<div id="login">
-   		<span class="subtitulo" onmouseover="mouseOverMenu(this, 'Fazer login');" onclick='window.open("login.html","_self")'>Fazer login</span>
-   	</div>
+	<!-- HEADER -->
+	<header>
+		<nav>
+    	<div class="nav-wrapper grey darken-4">
+      		<a href="#" class="brand-logo center" id="logo">Crypto.me</a>
+      		<ul id="nav-mobile" class="right hide-on-med-and-down">
+        		<li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
+      		</ul>
+    	</div>
+  		</nav>
+	</header>
+	
+	<!-- SLIDER -->
+  	<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="imagens/matrix-bode-na-sala.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Aprenda criptografia de forma fácil!</h3>
+          <a class="waves-effect waves-light btn" href="aprenda.html">Clique aqui!</a>
+        </div>
+      </li>
+      <li>
+        <img src="imagens/matrix-bode-na-sala.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Faça nosso quiz</h3>
+          <a class="waves-effect waves-light btn" href="quiz.html">Clique aqui!</a>
+        </div>
+      </li>
+      <li>
+        <img src="imagens/matrix-bode-na-sala.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Teste nosso tradutor</h3>
+          <a class="waves-effect waves-light btn" href="tradutor.html">Clique aqui!</a>
+        </div>
+      </li>
+      <li>
+        <img src="imagens/matrix-bode-na-sala.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Torne-se um Crypto!</h3>
+          <a class="waves-effect waves-light btn" href="login.html">Clique aqui!</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    <div class="box-imagem" id="box-imagem">
-    	<h1 class="h1-box-imagem">Aprenda criptografia facilmente!</h1>
-        <img src="imagens/matrix-bode-na-sala.jpg" class="imagem-box-imagem" id="matrix">
-        
-        <a href="#" class="hvr-grow-rotate">Teste agora</a>
-    </div>
+  <!-- CONTENT -->
+  <div class="row container">
+  	<section class="red col s12">
+  		sdfds
+  	</section>
+
+  	<aside class="green">
+  		sdfd
+  	</aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer grey darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Esse é o nosso site, esperamos que tenha gostado</h5>
+                <p class="grey-text text-lighten-4">Feito por alunos do COTUCA</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://pt-br.facebook.com/">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/?lang=pt-br">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/?hl=pt-br">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/">YouTube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright grey darken-4">
+            <div class="container">
+            © 2018 Copyright Crypto.me
+            </div>
+          </div>
+   </footer>
+
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script>
+    	$(document).ready(function(){
+   			$('.slider').slider();
+  		});
+    </script>
 </body>
 </html>

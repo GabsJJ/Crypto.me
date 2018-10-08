@@ -1,28 +1,44 @@
 <html>
     <head>
 		<title>Crypto.me - Aprenda</title>
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
 		<link rel="stylesheet" type="text/css" href="css/estilo-aprenda.css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/hover.css">
+
+		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
+
+		<!-- Fontes -->
+		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+		<!-- Materialize -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="materialize/css/materialize.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 
 	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
-    <div id="cabecalho">
-    	<ul>
-		 	<li id="logo" onclick='window.open("principal.html","_self")'>Crypto.me</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Home');" onclick='window.open("principal.html","_self")'>Home</li>
-		 	<li>-</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Aprenda');" onclick='window.open("aprenda.html","_self")'>Aprenda</li>
-		 	<li>-</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Quiz');" onclick='window.open("quiz.html","_self")'>Quiz</li>
-		 	<li>-</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Tradutor');" onclick='window.open("tradutor.html","_self")'>Tradutor</li>
-        </ul>
+    
+	<nav>
+    <div class="nav-wrapper grey darken-4">
+      <a href="#" class="brand-logo center">Crypto.me</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
+        <li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
+        <li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
+        <li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
+        <li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
+      </ul>
     </div>
+  	</nav>
+
     <div id="tituloSombra">
         <h1>Aprenda</h1>
     </div>
+
+    <script src="materialize/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </body>
 </html>
