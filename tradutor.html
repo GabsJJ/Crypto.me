@@ -2,45 +2,109 @@
 <html>
 	<head>
 		<title>Crypto.me - Tradutor</title>
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
-		<script type="text/javascript" src="js/jsTradutor.js"></script>
+    <script type="text/javascript" src="js/jsTradutor.js"></script>
+
+		<!-- Fontes -->
+		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+		<!-- Materialize -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 
 	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
-		<div id="cabecalho">
-        <ul>
-		 	<li id="logo" onclick='window.open("principal.html","_self")'>Crypto.me</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Home');" onclick='window.open("principal.html","_self")'>Home</li>
-		 	<li>-</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Aprenda');" onclick='window.open("aprenda.html","_self")'>Aprenda</li>
-		 	<li>-</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Quiz');" onclick='window.open("quiz.html","_self")'>Quiz</li>
-		 	<li>-</li>
-		 	<li onmouseover="mouseOverMenu(this, 'Tradutor');" onclick='window.open("tradutor.html","_self")'>Tradutor</li>
-        </ul>
-    </div>
 
-    <h1>Tradutor</h1>
+	<!-- HEADER -->
+	<header>
+		<nav>
+    	<div class="nav-wrapper grey darken-4">
+      		<a href="#" class="brand-logo center" id="logo">Crypto.me</a>
+      		<ul id="nav-mobile" class="right hide-on-med-and-down">
+        		<li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
+      		</ul>
+    	</div>
+  		</nav>
+	</header>
 
-    <span class="subtitulo" style="position : absolute; left : 60px; top: 120px;">Entrada</span>
+  <!-- CONTENT -->
+    <div class="row container">
+    <section id="tituloSombra">
+        <h2>Tradutor</h2>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="Digite aqui" id="txtEntrada" type="text">
+              <label for="input">Entrada</label>
+            </div>
+            <div class="input-field col s6">
+              <input placeholder="Digite aqui" id="txtSaida" type="text">
+              <label for="output">Saida</label>
+            </div>
+          </div>
+          </form>
 
-    <input id="txtEntrada" style="position : absolute; left : 60px; top: 160px; width: 602px; height: 20px;">
+          <div class="input-field col s12">
+            <select id="selecione">
+              <option value="" disabled selected>Selecione a criptografia desejada</option>
+              <option value="1">A1Z26</option>
+            </select>
+          </div>
 
-    <span class="subtitulo" style="position : absolute; left : 60px; top: 210px;">Saída</span>
+          <button onclick="document.getElementById('txtSaida').value = criptografar(document.getElementById('txtEntrada').value,document.getElementById('selecione').value);" class="btn waves-effect waves-light" type="submit" name="action">  Criptografar
+            <i class="material-icons right">lock_outline</i>
+          </button>
 
-    <input id="txtSaida" style="position : absolute; left : 60px; top: 250px; width: 602px; height: 20px;">
+          <button onclick="document.getElementById('txtSaida').value = descriptografar(document.getElementById('txtEntrada').value, document.getElementById('selecione').value);" class="btn waves-effect waves-light" type="submit" name="action"> Descriptografar
+            <i class="material-icons right">lock_open</i>
+          </button>
+        </div>   
+    </section>
+  </div>
 
-    <button onclick="document.getElementById('txtSaida').value = criptografar(document.getElementById('txtEntrada').value, document.getElementById('selecione').value);" 
-    style="position : absolute; left : 60px; top: 280px;"">Criptografar</button>
+  <!-- FOOTER -->
+  <footer class="page-footer grey darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Esse é o nosso site, esperamos que tenha gostado</h5>
+                <p class="grey-text text-lighten-4">Feito por alunos do COTUCA</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://pt-br.facebook.com/">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/?lang=pt-br">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/?hl=pt-br">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/">YouTube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright grey darken-4">
+            <div class="container">
+            © 2018 Copyright Crypto.me
+            </div>
+          </div>
+   </footer>
 
-    <button onclick="document.getElementById('txtSaida').value = descriptografar(document.getElementById('txtEntrada').value, document.getElementById('selecione').value);" 
-    style="position : absolute; left : 150px; top: 280px;"">Descriptografar</button>
-
-    <select id="selecione" style="position : absolute; left : 260px; top: 280px; height: 21px;">
-    	<option value="1">A1Z26</option>
-    </select>
-
-	</body>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
+  </script>
+</body>
 </html>

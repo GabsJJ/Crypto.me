@@ -21,22 +21,54 @@
 
 	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
     
-	<nav>
-    <div class="nav-wrapper grey darken-4">
-      <a href="#" class="brand-logo center">Crypto.me</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
-        <li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
-        <li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
-        <li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
-        <li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
-      </ul>
-    </div>
-  	</nav>
+	<!-- HEADER -->
+  <header>
+    <nav>
+      <div class="nav-wrapper grey darken-4">
+          <a href="#" class="brand-logo center" id="logo">Crypto.me</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
+            <li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
+            <li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
+            <li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
+            <li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
+          </ul>
+      </div>
+      </nav>
+  </header>
 
-    <div id="tituloSombra">
-        <h1>Aprenda</h1>
-    </div>
+  <div class="row container">
+    <section id="tituloSombra">
+        <h2>Aprenda</h2>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+    <!-- FOOTER -->
+  <footer class="page-footer grey darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Esse é o nosso site, esperamos que tenha gostado</h5>
+                <p class="grey-text text-lighten-4">Feito por alunos do COTUCA</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://pt-br.facebook.com/">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/?lang=pt-br">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/?hl=pt-br">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/">YouTube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright grey darken-4">
+            <div class="container">
+            © 2018 Copyright Crypto.me
+            </div>
+          </div>
+   </footer>
 
     <script src="materialize/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

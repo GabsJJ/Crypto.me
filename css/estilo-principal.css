@@ -4,38 +4,6 @@
     left: 700px;
 }
 
-#box-imagem img{
-    position: relative;
-    width: 620px;
-    height: 400px;
-    border: 6px solid white;
-    border-radius: 10px;
-    top: 130px;
-    left: -150px;
-}
-
-#box-imagem h1{
-    position: absolute;
-    color: white;
-    left: 820px;
-    top: 250px;
-    font-size: 35px;
-}
-
-#box-imagem a{
-    position: relative;
-    text-decoration: none;
-    color: black;
-    border-radius: 35px;
-    box-shadow: 10px 10px 10px solid black;
-    left: 350px; 
-    top: -30px;
-    border-style: dashed;
-    border: 10px solid white;
-    background-color: white;
-    font-family: 'Maven Pro', sans-serif;
-}
-
 #login {
     position: absolute;
     text-align: center;

@@ -2,55 +2,127 @@
 <html>
 	<head>
 		<title>Crypto.me - Login</title>
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
 		<link rel="stylesheet" type="text/css" href="css/estilo-login.css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
+
+		<!-- Fontes -->
+		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+		<!-- Materialize -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 
-	<body onload="mouseOverMenu(logo, 'Crypto.me');">
-		<div id="cabecalho">
-        	<ul>
-			 	<li id="logo" onclick='window.open("principal.html","_self")'>Crypto.me</li>
-			 	<li onmouseover="mouseOverMenu(this, 'Home');" onclick='window.open("principal.html","_self")'>Home</li>
-			 	<li>-</li>
-			 	<li onmouseover="mouseOverMenu(this, 'Aprenda');" onclick='window.open("aprenda.html","_self")'>Aprenda</li>
-			 	<li>-</li>
-			 	<li onmouseover="mouseOverMenu(this, 'Quiz');" onclick='window.open("quiz.html","_self")'>Quiz</li>
-			 	<li>-</li>
-			 	<li onmouseover="mouseOverMenu(this, 'Tradutor');" onclick='window.open("tradutor.html","_self")'>Tradutor</li>
-	        </ul>
-	    </div>
+	<!-- HEADER -->
+	<header>
+		<nav>
+    	<div class="nav-wrapper grey darken-4">
+      		<a href="#" class="brand-logo center" id="logo">Crypto.me</a>
+      		<ul id="nav-mobile" class="right hide-on-med-and-down">
+        		<li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
+      		</ul>
+    	</div>
+  		</nav>
+	</header>
 
-		<br><br><br><br>
+	<!-- CONTENT -->
+	<div class="row container">
+		<h2>Revele seu Crypto</h2>
+		<section>
+			<div class="row">
+    			<form class="col s12">
+      				<div class="row">
+        				<div class="input-field col s6">
+          					<i class="material-icons prefix">account_circle</i>
+          					<input id="username" type="text" class="validate">
+          					<label for="username">Username</label>
+        				</div>
+       					<div class="input-field col s6">
+       						<i class="material-icons prefix">vpn_key</i>
+          					<input id="password" type="password" class="validate">
+          					<label for="password">Senha</label>
+        				</div>
+      				</div>
+    			</form>
+    			<button class="btn waves-effect waves-light" type="submit" name="action">Login
+    				<i class="material-icons right">send</i>
+  				</button>
+  			</div>
+		</section>
 
-		<h1 style="position: absolute; top: 72px;">Revele seu Crypto</h1>
-		<div id="caixa">
-			<span class="subtitulo" style="position: absolute; left: 1%; top: 1px;">Login</span>
-			<form>
-				<span class="subsubtitulo" style="position: absolute; left: 1%; top: 45px;">Usuário: </span>
-				<input type="email" name="tUsuario" class="caixaDeTexto" maxlength="50" style="position: absolute; left: 8%; top: 49px;">
-				<span class="subsubtitulo" style="position: absolute; left: 1%; top: 85px;">Senha: </span>
-				<input type="password" name="tSenha" class="caixaDeTexto" maxlength="50" style="position: absolute; left: 8%; top: 89px;">
-				<input type="button" name="btnEnviar1" style="position: absolute; left: 1%; top: 129px;" value="Confirmar">
-			</form>
-		</div>
+		<h2>Torne-se um Crypto</h2>
+		<section>
+			<div class="row">
+    			<form class="col s12">
+      				<div class="row">
+        				<div class="input-field col s6">
+          					<i class="material-icons prefix">account_circle</i>
+          					<input id="usernameR" type="text" class="validate">
+          					<label for="usernameR">Username</label>
+        				</div>
+        				<div class="input-field col s6">
+        					<i class="material-icons prefix">email</i>
+          					<input id="email" type="email" class="validate">
+          					<label for="email">Email</label>
+          					<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+       					</div>
+       					<div class="input-field col s6">
+       						<i class="material-icons prefix">vpn_key</i>
+          					<input id="passwordR" type="password" class="validate">
+          					<label for="passwordR">Senha</label>
+        				</div>
+        				<div class="input-field col s6">
+        					<i class="material-icons prefix">vpn_key</i>
+          					<input id="passwordRR" type="password" class="validate">
+          					<label for="passwordRR">Repete a senha</label>
+        				</div>
+      				</div>
+    			</form>
+    			<button class="btn waves-effect waves-light" type="submit" name="action">Registrar
+    				<i class="material-icons right">send</i>
+  				</button>
+  			</div>
+		</section>
+	</div>
 
-		<h1 style="position: absolute; top: 310px;">Torne-se um Crypto</h1>
-		<div id="caixa2" style="">
-			<span class="subtitulo" style="position: absolute; left: 1%; top: 1px;">Registrar</span>
-			<form>
-				<span class="subsubtitulo" style="position: absolute; left: 1%; top: 45px;">Email: </span>
-				<input type="text" name="tNEmail" class="caixaDeTexto" maxlength="50" style="position: absolute; left: 8%; top: 49px;">
-				<span class="subsubtitulo" style="position: absolute; left: 1%; top: 85px;">Usuário: </span>
-				<input type="text" name="tNUsuario" class="caixaDeTexto" maxlength="50" style="position: absolute; left: 8%; top: 89px;">
-				<span class="subsubtitulo" style="position: absolute; left: 1%; top: 125px;">Senha: </span>
-				<input type="password" name="tNSenha1" class="caixaDeTexto" maxlength="50" style="position: absolute; left: 8%; top: 129px;">
-				<span class="subsubtitulo" style="position: absolute; left: 1%; top: 165px;">Confirmar senha: </span>
-				<input type="password" name="tNSenha1" class="caixaDeTexto" maxlength="50" style="position: absolute; left: 16%; top: 169px;">
-				<input type="button" name="btnEnviar2" style="position: absolute; left: 1%; top: 209px;" value="Confirmar">
-			</form>
-		</div>
 
+  <!-- FOOTER -->
+  <footer class="page-footer grey darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Esse é o nosso site, esperamos que tenha gostado</h5>
+                <p class="grey-text text-lighten-4">Feito por alunos do COTUCA</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://pt-br.facebook.com/">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/?lang=pt-br">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/?hl=pt-br">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/">YouTube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright grey darken-4">
+            <div class="container">
+            © 2018 Copyright Crypto.me
+            </div>
+          </div>
+   </footer>
+
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	</body>
 </html>
