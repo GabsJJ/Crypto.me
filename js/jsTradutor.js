@@ -1,6 +1,6 @@
 /* Alfabeto */
 var alf = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S"
-          , "T", "U", "V", "W", "X", "Y", "Z"];
+          , "T", "U", "V", "W", "X", "Y", "Z"]; 
 
 function criptografar(mensagem, idCripto)
 {
@@ -11,6 +11,10 @@ function criptografar(mensagem, idCripto)
     {
         case "1":
             nMensagem = cA1Z26(mensagem);
+            break;
+
+        case "2":
+            nMensagem = caesar(mensagem);
             break;
             
         default:
@@ -31,6 +35,10 @@ function descriptografar(mensagem, idCripto)
         case "1":
             nMensagem = DEScA1Z26(mensagem);
             break;
+
+        case "2":
+            nMensagem = DEScaesar(mensagem);
+            break;
             
         default:
             nMensagem = mensagem;
@@ -39,6 +47,87 @@ function descriptografar(mensagem, idCripto)
     
     return nMensagem;
 }
+
+/*Criptografa*/
+function caesar(mensagem)
+{
+    var input = mensagem;
+    var chave = parseInt(document.getElementById('txtChave').value);
+    var outText = "";
+    var sinal = 1;
+
+    var tamanho = input.length;
+    var indiceDaLetraAtual;
+    outText = "";
+    var i = 0;
+    
+    while(i < tamanho){ 
+      if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
+      {
+          indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
+          outText += alf[(indiceDaLetraAtual + (chave * sinal)) % alf.length];
+          i++;
+      }
+      else{
+        outText += input.substring(i,(i+1));  //Se o caractere não estiver no vetor, ele apenas põe ele na string sem criptografar
+        i++;
+      }
+    }
+
+    return outText;
+}
+
+/*Descriptografar*/
+function DEScaesar(mensagem)
+{
+    var input = mensagem;
+    var chave = parseInt(document.getElementById('txtChave').value);
+    var outText = "";
+    var sinal = -1;
+
+    var tamanho = input.length;
+    var indiceDaLetraAtual;
+    outText = "";
+    var i = 0;
+    
+    while(i < tamanho){ 
+      if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
+      {
+          indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
+          if(chave > indiceDaLetraAtual)
+            outText += alf[(indiceDaLetraAtual + (chave * sinal))*-1 % alf.length];
+          else
+            outText += alf[(indiceDaLetraAtual + (chave * sinal)) % alf.length];
+          i++;
+      }
+      else{
+        outText += input.substring(i,(i+1));  //Se o caractere não estiver no vetor, ele apenas põe ele na string sem criptografar
+        i++;
+      }
+    }
+
+    return outText;
+}
+
+/*function verificarCriptografia(){
+    var chave = document.getElementById('txtChave');
+    var select = document.getElementById('selecione');
+    var indice = select.selectedIndex;
+    switch(indice)
+    {
+        case 0:
+            chave.disabled = true;
+            break;
+
+        case 1:
+            chave.disabled = false;
+            break;
+
+        default:
+            chave.disabled = true;
+            break;
+    }   
+}*/
 
 /* Criptografar */
 function cA1Z26 (mensagem)
