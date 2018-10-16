@@ -95,9 +95,9 @@ function DEScaesar(mensagem)
       {
           indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
           if(chave > indiceDaLetraAtual)
-            outText += alf[(indiceDaLetraAtual + (chave * sinal))*-1 % alf.length];
+            outText += alf[(chave + indiceDaLetraAtual)-(alf.length-chave)+1];
           else
-            outText += alf[(indiceDaLetraAtual + (chave * sinal)) % alf.length];
+            outText += alf[(indiceDaLetraAtual - chave)];
           i++;
       }
       else{
