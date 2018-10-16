@@ -45,6 +45,14 @@ insert into Criptografia values(1, 'A1Z26','Essa é uma criptografia simples onde
 'Cada letra será substituida pelo número da sua posição no alfabeto. Para que os números não se misturem, se usa "-" entre cada letra e um espaço
 entre cada palavra. Acentos não são usados e não há diferença entre letras maiúsculas e minúsculas',2,1)
 
+insert into Criptografia values(2,'Cifra de César','Esta é uma das mais antigas e mais simples forma de criptografia existente',
+'A Cifra de César consiste basicamente em um processo de substituição com base em um número que indica quantas posições o alfabeto original
+vai se deslocar. Um exemplo, se esse número for igual a 3, o alfabeto vai se deslocar em 3 posições, ou seja, a letra A passa a ser D, B passa
+a ser E, e assim por diante.',1,2)
+
+select * from Criptografia
+
 --Quiz
 insert into quiz values(1,'Criptografe "Ola mundo" usando A1Z26', '15-12-1 13-21-14-4-15')
 insert into quiz values(2,'Descriptografe "3-18-9-16-20-15-7-18-1-6-9-1" usando A1Z26', 'Criptografia')
+insert into quiz values(3,'Criptografe "Julio Cesar" usando a Cifra de Cesar com a rotação nº13', 'WÚYVB PÉFNE')

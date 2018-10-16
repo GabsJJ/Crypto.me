@@ -69,8 +69,17 @@ function caesar(mensagem)
           i++;
       }
       else{
-        outText += input.substring(i,(i+1));  //Se o caractere não estiver no vetor, ele apenas põe ele na string sem criptografar
-        i++;
+        if(input.substring(i,(i+1)) == " ")
+        {
+            outText += input.substring(i,(i+1));
+            i++;
+        }
+        else
+        {
+            alert("Não inclua acentos nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
+            outText = "";
+            break;  
+        }
       }
     }
 
@@ -87,7 +96,6 @@ function DEScaesar(mensagem)
 
     var tamanho = input.length;
     var indiceDaLetraAtual;
-    outText = "";
     var i = 0;
     
     while(i < tamanho){ 
@@ -95,14 +103,27 @@ function DEScaesar(mensagem)
       {
           indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
           if(chave > indiceDaLetraAtual)
-            outText += alf[(chave + indiceDaLetraAtual)-(alf.length-chave)+1];
+            //outText += alf[(chave + indiceDaLetraAtual)-(alf.length-chave)+1];
+            outText += alf[(chave - indiceDaLetraAtual) % alf.length];
           else
-            outText += alf[(indiceDaLetraAtual - chave)];
+          {
+            outText += alf[(indiceDaLetraAtual - chave) % 25];
+          }
+            
           i++;
       }
       else{
-        outText += input.substring(i,(i+1));  //Se o caractere não estiver no vetor, ele apenas põe ele na string sem criptografar
-        i++;
+        /*if(input.substring(i,(i+1)) == " ")
+        {*/
+            outText += input.substring(i,(i+1));
+            i++
+        /*}
+        else
+        {
+            alert("Não inclua acentos nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
+            outText = "";
+            break;  
+        }*/
       }
     }
 
