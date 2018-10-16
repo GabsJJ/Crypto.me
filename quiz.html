@@ -6,9 +6,11 @@
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
 		<link rel="stylesheet" type="text/css" href="css/teste.css">
 		<link rel="stylesheet" type="text/css" href="css/hover.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo-quiz.css">
 
 		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
+    <script type="text/javascript" src="js/jsQuiz.js"></script>
 
 		<!-- Fontes -->
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
@@ -20,11 +22,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 
-	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
+	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');
+                PegarBanco();">
 
 	<nav>
     <div class="nav-wrapper grey darken-4">
-      <a href="#" class="brand-logo center">Crypto.me</a>
+      <a href="#" class="brand-logo center" id="logo">Crypto.me</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
         <li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
@@ -38,6 +41,22 @@
     <div class="row container">
       <section id="tituloSombra">
         <h2>Quiz</h2>
+        <br>
+
+        <form>
+          <label id="l1" class="ques"></label>
+          <input id="t1">
+          <br><br>
+
+          <label id="l2"></label>
+          <input id="t2">
+          <br><br>
+
+          <label id="l3"></label>
+          <input id="t3">
+          <br><br>
+        </form>
+
       </section>
     </div>
 
