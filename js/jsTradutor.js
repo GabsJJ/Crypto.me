@@ -76,7 +76,7 @@ function caesar(mensagem)
         }
         else
         {
-            alert("Não inclua acentos nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
+            alert("Não inclua acentos/Caracteres especiais nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
             outText = "";
             break;  
         }
@@ -95,6 +95,7 @@ function DEScaesar(mensagem)
 
     var tamanho = input.length;
     var indiceDaLetraAtual;
+    var indiceAnterior;
     var i = 0;
     
     while(i < tamanho){ 
@@ -102,34 +103,28 @@ function DEScaesar(mensagem)
       {
           indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
           alert(indiceDaLetraAtual);
-          if(chave > indiceDaLetraAtual)
-          {
-            if(chave > 8)
-            {
-                outText += alf[(chave + indiceDaLetraAtual)-1 % alf.length];
-            }
-            else
-                outText += alf[(chave + indiceDaLetraAtual) % alf.length];
-          }
+          if(indiceDaLetraAtual - chave > 0)
+            outText += alf[(indiceDaLetraAtual - chave) % alf.length];
           else
           {
-            outText += alf[(indiceDaLetraAtual - chave) % alf.length];
+            indiceAnterior = indiceDaLetraAtual + alf.length;
+            outText += alf[(indiceAnterior - chave) % alf.length];
           }
             
           i++;
       }
       else{
-        /*if(input.substring(i,(i+1)) == " ")
-        {*/
+        if(input.substring(i,(i+1)) == " ")
+        {
             outText += input.substring(i,(i+1));
             i++
-        /*}
+        }
         else
         {
-            alert("Não inclua acentos nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
+            alert("Não inclua acentos/Caracteres especiais nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
             outText = "";
             break;  
-        }*/
+        }
       }
     }
 
