@@ -92,7 +92,6 @@ function DEScaesar(mensagem)
     var input = mensagem;
     var chave = parseInt(document.getElementById('txtChave').value);
     var outText = "";
-    var sinal = -1;
 
     var tamanho = input.length;
     var indiceDaLetraAtual;
@@ -102,12 +101,19 @@ function DEScaesar(mensagem)
       if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
       {
           indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
+          alert(indiceDaLetraAtual);
           if(chave > indiceDaLetraAtual)
-            //outText += alf[(chave + indiceDaLetraAtual)-(alf.length-chave)+1];
-            outText += alf[(chave - indiceDaLetraAtual) % alf.length];
+          {
+            if(chave > 8)
+            {
+                outText += alf[(chave + indiceDaLetraAtual)-1 % alf.length];
+            }
+            else
+                outText += alf[(chave + indiceDaLetraAtual) % alf.length];
+          }
           else
           {
-            outText += alf[(indiceDaLetraAtual - chave) % 25];
+            outText += alf[(indiceDaLetraAtual - chave) % alf.length];
           }
             
           i++;
