@@ -102,7 +102,6 @@ function DEScaesar(mensagem)
       if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
       {
           indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
-          alert(indiceDaLetraAtual);
           if(indiceDaLetraAtual - chave > 0)
             outText += alf[(indiceDaLetraAtual - chave) % alf.length];
           else
