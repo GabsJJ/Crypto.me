@@ -18,7 +18,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 
-	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');" class="grey lighten-1"  >
+	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
 
 	<!-- HEADER -->
 	<header>
@@ -37,9 +37,57 @@
 	</header>
 	
   <!-- CONTENT -->
-  <div class="row container">
+    <div class="parallax-container">
+      <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
+    </div>
 
-  </div>
+    <div class="section grey lighten-1">
+        <div class="row container">
+          <h2 class="header">Aprenda</h2>
+          <p class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para aprender mais sobre criptografia :)</p>
+          <a class="waves-effect waves-light btn-large black" href="aprenda.html">Clique aqui</a>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="imagens/morfeu.jpg"></div>
+    </div>
+
+    <div class="section grey lighten-1">
+        <div class="row container">
+          <h2 class="header">Quiz</h2>
+          <p class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para fazer nosso quiz :)</p>
+          <a class="waves-effect waves-light btn-large black" href="aprenda.html">Clique aqui</a>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
+    </div>
+
+    <div class="section grey lighten-1">
+        <div class="row container">
+          <h2 class="header">Tradutor</h2>
+          <p class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para conferir nosso tradutor :)</p>
+          <a class="waves-effect waves-light btn-large black" href="aprenda.html">Clique aqui</a>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="imagens/morfeu.jpg"></div>
+    </div>
+
+    <div class="section grey lighten-1">
+        <div class="row container">
+          <h2 class="header">Login</h2>
+          <p class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para fazer login/registrar :)</p>
+          <a class="waves-effect waves-light btn-large black" href="aprenda.html">Clique aqui</a>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
+    </div>
 
   <!-- FOOTER -->
   <footer class="page-footer grey darken-3">
@@ -73,6 +121,10 @@
     	$(document).ready(function(){
    			$('.slider').slider();
   		});
+
+      $(document).ready(function(){
+        $('.parallax').parallax();
+      });
     </script>
 </body>
 </html>
