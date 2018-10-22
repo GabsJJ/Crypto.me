@@ -71,7 +71,7 @@ function VerificarQuestoes()
 {
 	for(i = 0; i < tamanho; i++)
 	{
-		if(document.getElementById("l" + (i + 1)).value != questoes[i].resposta)
-			alert("Resposta " + i + " está errada!");
+		if(document.getElementById("t" + (i + 1)).value != questoes[i].resposta)
+			alert("Resposta " + (i + 1) + " está errada!");
 	}
 }

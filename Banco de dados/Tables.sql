@@ -53,11 +53,6 @@ a ser E, e assim por diante.',1,2)
 select * from Criptografia
 
 --Quiz
-<<<<<<< HEAD
-insert into quiz values(1,'Criptografe "Ola mundo" usando A1Z26', '15-12-1 13-21-14-4-15')
-insert into quiz values(2,'Descriptografe "3-18-9-16-20-15-7-18-1-6-9-1" usando A1Z26', 'Criptografia')
-insert into quiz values(3,'Criptografe "Julio Cesar" usando a Cifra de Cesar com a rotação nº13', 'WÚYVB PÉFNE')
-=======
 insert into Quiz values(1,'Criptografe "Ola mundo" usando A1Z26', '15-12-1 13-21-14-4-15')
 insert into Quiz values(2,'Descriptografe "3-18-9-16-20-15-7-18-1-6-9-1" usando A1Z26', 'Criptografia')
->>>>>>> 53c8e73d2ade21f70b64bf2b4815baaffd945137
+insert into Quiz values(3,'Criptografe "Julio Cesar" usando a Cifra de Cesar com a rotação nº13', 'WUYVB PEFNE')
