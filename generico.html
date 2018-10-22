@@ -1,11 +1,9 @@
-<!DOCTYPE HTML>
 <html>
-	<head>
+    <head>
 		<title>Crypto.me</title>
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
 		<link rel="stylesheet" type="text/css" href="css/estilo-principal.css">
-		<link rel="stylesheet" type="text/css" href="css/hover.css">
 
 		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
@@ -16,25 +14,65 @@
 
 		<!-- Materialize -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="materialize/css/materialize.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 
-	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
-		<nav>
-    <div class="nav-wrapper grey darken-4">
-      <a href="#" class="brand-logo center">Crypto.me</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
-        <li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
-        <li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
-        <li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
-        <li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
-      </ul>
-    </div>
-  	</nav>
+	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');" class="grey lighten-1"  >
 
-  	<script src="materialize/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	</body>
+	<!-- HEADER -->
+	<header>
+		<nav>
+    	<div class="nav-wrapper grey darken-4">
+      		<a href="#" class="brand-logo center" id="logo">Crypto.me</a>
+      		<ul id="nav-mobile" class="right hide-on-med-and-down">
+        		<li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
+      		</ul>
+    	</div>
+  		</nav>
+	</header>
+	
+  <!-- CONTENT -->
+  <div class="row container">
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer grey darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Esse é o nosso site, esperamos que tenha gostado</h5>
+                <p class="grey-text text-lighten-4">Feito por alunos do COTUCA</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://pt-br.facebook.com/">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/?lang=pt-br">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/?hl=pt-br">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/">YouTube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright grey darken-4">
+            <div class="container">
+            © 2018 Crypto.me - Todos os direitos reservados.
+            </div>
+          </div>
+   </footer>
+
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script>
+    	$(document).ready(function(){
+   			$('.slider').slider();
+  		});
+    </script>
+</body>
 </html>
