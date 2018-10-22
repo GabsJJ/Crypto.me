@@ -3,6 +3,7 @@ var questoes = new Array();
 const tamanho = 3;
 const qtdQuestoes = 3;
 
+//Pegando informações do banco e mostrando-as
 function PegarBanco() 
 {
     var xmlhttp = new XMLHttpRequest();
@@ -62,5 +63,15 @@ function MostrarQuestoes()
 	{
 		var oId = "l" + (i + 1);
 		document.getElementById(oId).innerHTML = questoes[i].questao;
+	}
+}
+
+//Verificando se as respostas estão corretas
+function VerificarQuestoes()
+{
+	for(i = 0; i < tamanho; i++)
+	{
+		if(document.getElementById("l" + (i + 1)).value != questoes[i].resposta)
+			alert("Resposta " + i + " está errada!");
 	}
 }
