@@ -2,10 +2,11 @@
 var alf = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S"
           , "T", "U", "V", "W", "X", "Y", "Z"]; 
 
-function criptografar(mensagem, idCripto)
+function criptografar(mensagem, idCripto, c)
 {
     mensagem = mensagem.toUpperCase();
     var nMensagem = "";
+    var chave = parseInt(document.getElementById('txtChave').value);
     
     switch(idCripto)
     {
@@ -14,7 +15,10 @@ function criptografar(mensagem, idCripto)
             break;
 
         case "2":
-            nMensagem = caesar(mensagem);
+            if(chave + "" != "NaN")
+                nMensagem = caesar(mensagem, chave);
+            else
+                alert("Por favor, insira uma chave válida!");
             break;
             
         default:
@@ -25,10 +29,11 @@ function criptografar(mensagem, idCripto)
     return nMensagem;
 }
 
-function descriptografar(mensagem, idCripto)
+function descriptografar(mensagem, idCripto, c)
 {
     mensagem = mensagem.toUpperCase();
     var nMensagem = "";
+    var chave = parseInt(document.getElementById('txtChave').value);
     
     switch(idCripto)
     {
@@ -37,7 +42,10 @@ function descriptografar(mensagem, idCripto)
             break;
 
         case "2":
-            nMensagem = DEScaesar(mensagem);
+            if(chave + "" != "NaN")
+                nMensagem = DEScaesar(mensagem, chave);
+            else
+                alert("Por favor, insira uma chave válida!");
             break;
             
         default:
@@ -49,10 +57,9 @@ function descriptografar(mensagem, idCripto)
 }
 
 /*Criptografa*/
-function caesar(mensagem)
+function caesar(mensagem, chave)
 {
     var input = mensagem;
-    var chave = parseInt(document.getElementById('txtChave').value);
     var outText = "";
     var sinal = 1;
 
@@ -86,71 +93,6 @@ function caesar(mensagem)
     return outText;
 }
 
-/*Descriptografar*/
-function DEScaesar(mensagem)
-{
-    var input = mensagem;
-    var chave = parseInt(document.getElementById('txtChave').value);
-    var outText = "";
-
-    var tamanho = input.length;
-    var indiceDaLetraAtual;
-    var indiceAnterior;
-    var i = 0;
-    
-    while(i < tamanho){ 
-      if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
-      {
-          indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
-          if(indiceDaLetraAtual - chave > 0)
-            outText += alf[(indiceDaLetraAtual - chave) % alf.length];
-          else
-          {
-            indiceAnterior = indiceDaLetraAtual + alf.length;
-            outText += alf[(indiceAnterior - chave) % alf.length];
-          }
-            
-          i++;
-      }
-      else{
-        if(input.substring(i,(i+1)) == " ")
-        {
-            outText += input.substring(i,(i+1));
-            i++
-        }
-        else
-        {
-            alert("Não inclua acentos/Caracteres especiais nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
-            outText = "";
-            break;  
-        }
-      }
-    }
-
-    return outText;
-}
-
-/*function verificarCriptografia(){
-    var chave = document.getElementById('txtChave');
-    var select = document.getElementById('selecione');
-    var indice = select.selectedIndex;
-    switch(indice)
-    {
-        case 0:
-            chave.disabled = true;
-            break;
-
-        case 1:
-            chave.disabled = false;
-            break;
-
-        default:
-            chave.disabled = true;
-            break;
-    }   
-}*/
-
-/* Criptografar */
 function cA1Z26 (mensagem)
 {
     var resul = "";
@@ -283,7 +225,49 @@ function cA1Z26 (mensagem)
     return resul.substring(0, resul.length - 1);
 }
 
-/* Descriptografar */
+/*Descriptografar*/
+function DEScaesar(mensagem, chave)
+{
+    var input = mensagem;
+    var outText = "";
+
+    var tamanho = input.length;
+    var indiceDaLetraAtual;
+    var indiceAnterior;
+    var i = 0;
+    
+    while(i < tamanho){ 
+      if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
+      {
+          indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
+          if(indiceDaLetraAtual - chave > 0)
+            outText += alf[(indiceDaLetraAtual - chave) % alf.length];
+          else
+          {
+            indiceAnterior = indiceDaLetraAtual + alf.length;
+            outText += alf[(indiceAnterior - chave) % alf.length];
+          }
+            
+          i++;
+      }
+      else{
+        if(input.substring(i,(i+1)) == " ")
+        {
+            outText += input.substring(i,(i+1));
+            i++
+        }
+        else
+        {
+            alert("Não inclua acentos/Caracteres especiais nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
+            outText = "";
+            break;  
+        }
+      }
+    }
+
+    return outText;
+}
+
 function DEScA1Z26(mensagem)
 {
     var result = "";
@@ -333,4 +317,33 @@ function DEScA1Z26(mensagem)
     }
 
     return result;
+}
+
+/*Funções da página*/
+function TravarChave(verdade)
+{
+    var c = document.getElementById("txtChave");
+    c.value = "";
+    c.disabled = verdade;
+}
+
+function TestarChave(valor)
+{
+    ativarBotoes();
+    switch(valor)
+    {
+        case "1":
+            TravarChave(true);
+            break;
+
+        case "2":
+            TravarChave(false);
+            break;
+    }
+}
+
+function ativarBotoes()
+{
+    document.getElementById("btnCri").disabled = false;
+    document.getElementById("btnDes").disabled = false;
 }

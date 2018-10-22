@@ -53,25 +53,25 @@
               <label for="output">Saida</label>
             </div>
             <div class="input-field col s12">
-              <input placeholder="Chave aqui" id="txtChave" type="text">
+              <input placeholder="Chave aqui" id="txtChave" type="text" disabled="true">
               <label for="input">Chave</label>
             </div>
           </div>
           </form>
 
           <div class="input-field col s12">
-            <select id="selecione">
+            <select id="selecione" onchange='TestarChave(value)'>
               <option value="" disabled selected>Selecione a criptografia desejada</option>
               <option value="1">A1Z26</option>
               <option value="2">Cifra de César</option>
             </select>
           </div>
 
-          <button onclick="document.getElementById('txtSaida').value = criptografar(document.getElementById('txtEntrada').value,document.getElementById('selecione').value);" class="btn waves-effect waves-light" type="submit" name="action">  Criptografar
+          <button onclick="document.getElementById('txtSaida').value = criptografar(document.getElementById('txtEntrada').value,document.getElementById('selecione').value);" class="btn waves-effect waves-light" type="submit" name="action" disabled="true" id="btnCri">  Criptografar
             <i class="material-icons right">lock_outline</i>
           </button>
 
-          <button onclick="document.getElementById('txtSaida').value = descriptografar(document.getElementById('txtEntrada').value, document.getElementById('selecione').value);" class="btn waves-effect waves-light" type="submit" name="action"> Descriptografar
+          <button onclick="document.getElementById('txtSaida').value = descriptografar(document.getElementById('txtEntrada').value, document.getElementById('selecione').value);" class="btn waves-effect waves-light" type="submit" name="action" disabled="true" id="btnDes"> Descriptografar
             <i class="material-icons right">lock_open</i>
           </button>
         </div>   
