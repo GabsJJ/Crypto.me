@@ -24,6 +24,7 @@
 	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');
                 PegarBanco();">
 
+  <!-- HEADER -->
 	<nav>
     <div class="nav-wrapper grey darken-4">
       <a href="#" class="brand-logo center" id="logo">Crypto.me</a>
@@ -37,34 +38,42 @@
     </div>
   	</nav>
 
-    <div class="row container">
-      <section id="tituloSombra">
-        <h2>Quiz</h2>
-        <br>
+  <!-- CONTENT -->
+  <div class="row container">
+      <h2>Quiz</h2>
 
-        <form>
-          <h5 id="l1"></h5>
-          <input id="t1">
-          <br><br>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <h5 id="l1"></h5>
+              <input type="text" class="validate" id="t3">
+            </div>
+          </div>
 
-          <h5 id="l2"></h5>
-          <input id="t2">
-          <br><br>
+          <div class="row">
+            <div class="input-field col s12">
+              <h5 id="l2"></h5>
+              <input type="text" class="validate" id="t3">
+            </div>
+          </div>
 
-          <h5 id="l3"></h5>
-          <input id="t3">
-          <br><br>
+          <div class="row">
+            <div class="input-field col s12">
+              <h5 id="l3"></h5>
+              <input type="text" class="validate" id="t3">
+            </div>
+          </div>
 
-
-
-          <button onclick="VerificarQuestoes();">Conferir</button>
+          <button class="btn waves-effect waves-light" type="submit" name="action" onclick="VerificarQuestoes();">Conferir
+            <i class="material-icons right">send</i>
+          </button>
         </form>
+      </div>
+  </div>
 
-      </section>
-    </div>
-
-    <!-- FOOTER -->
-  <footer class="page-footer grey darken-3" style="position: fixed; bottom: 0; width: 100%; margin: auto;">
+  <!-- FOOTER -->
+  <footer class="page-footer grey darken-3">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
