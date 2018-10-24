@@ -8,6 +8,7 @@
 
 		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
+    <script type="text/javascript" src="js/jsLogin.js"></script>
 
 		<!-- Fontes -->
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
@@ -63,22 +64,22 @@
 		<h2>Torne-se um Crypto</h2>
 		<section>
 			<div class="row">
-    			<form class="col s12">
+    			<form class="col s12" action="http://localhost:3000/Usuario" method="post">
       				<div class="row">
         				<div class="input-field col s6">
           					<i class="material-icons prefix">account_circle</i>
-          					<input id="usernameR" type="text" class="validate">
+          					<input id="usernameR" type="text" class="validate" name="nUser">
           					<label for="usernameR">Username</label>
         				</div>
         				<div class="input-field col s6">
         					<i class="material-icons prefix">email</i>
-          					<input id="email" type="email" class="validate">
+          					<input id="email" type="email" class="validate" name="nEmail">
           					<label for="email">Email</label>
           					<span class="helper-text" data-error="Email inválido" data-success="Correto">Digite o email</span>
        					</div>
        					<div class="input-field col s6">
        						<i class="material-icons prefix">vpn_key</i>
-          					<input id="passwordR" type="password" class="validate">
+          					<input id="passwordR" type="password" class="validate" name="nSenha">
           					<label for="passwordR">Senha</label>
         				</div>
         				<div class="input-field col s6">
@@ -87,10 +88,11 @@
           					<label for="passwordRR">Repete a senha</label>
         				</div>
       				</div>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
+            <i class="material-icons right">send</i>
+          </button>
     			</form>
-    			<button class="btn waves-effect waves-light" type="submit" name="action">Registrar
-    				<i class="material-icons right">send</i>
-  				</button>
   			</div>
 		</section>
 	</div>
