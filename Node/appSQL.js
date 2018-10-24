@@ -34,20 +34,17 @@ rota.get('/Quiz', (requisicao, resposta) =>{
 execSQL('SELECT * FROM Quiz', resposta);
 })
 
-//o simbolo ? indica que id na rota abaixo é opcional
-rota.get('/Quiz/:id?', (requisicao, resposta) => {
+rota.get('/Usuario/:email', (requisicao, resposta) => {
 let filtro = '';
-if (requisicao.params.codMedico)
-filtro = ' WHERE id=' + parseInt(requisicao.params.id);
-execSQL('SELECT * from Quiz' + filtro, resposta);
+if (requisicao.params.email)
+filtro = ' WHERE email=' + requisicao.params.email;
+execSQL('SELECT * from Usuario' + filtro, resposta);
 })
 
-/*
-rota.post('/Quiz', (requisicao, resposta) =>{
-const id = parseInt(requisicao.body.id);   //É o nome do campo, não o ID!
-const n = requisicao.body.nome.substring(0,30);
-const c = requisicao.body.crm.substring(0,10);
-console.log(id, n, c);
-execSQL(`INSERT INTO MedicoBD2(codMedico, nome, crm) VALUES(${id},'${n}','${c}')`,resposta);
+rota.post('/Usuario', (requisicao, resposta) => {
+const e = requisicao.body.nEmail.substring(0,254);
+const u = requisicao.body.nUser.substring(0,50);
+const s = requisicao.body.nSenha.substring(0,50);
+console.log(e, u, s);
+execSQL(`INSERT INTO Usuario(email, username, senha) VALUES('${e}','${u}','${s}')`,resposta);
 })
-*/
