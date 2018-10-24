@@ -31,65 +31,75 @@
         		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="#tradutor">Tradutor</a></li>
         		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="#login">Fazer Login</a></li>
       		</ul>
+
+          <ul id="slide-out" class="sidenav">
+            <li><a class="waves-effect" href="aprenda.html">Aprenda</a></li>
+            <li><a class="waves-effect" href="quiz.html">Quiz</a></li>
+            <li><a class="waves-effect" href="tradutor.html">Tradutor</a></li>
+            <li><a class="waves-effect" href="login.html">Login/Register</a></li>
+          </ul>
+          <a data-target="slide-out" class="sidenav-trigger" href="#"><i class="material-icons">menu</i></a>
     	</div>
   		</nav>
 	</header>
 	
   <!-- CONTENT -->
-    <div class="parallax-container">
-      <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
+    <div class="">
+      <img src="imagens/matrix-bode-na-sala.jpg" style="width: 100%; height: 100%;">
     </div>
 
-    <div class="section grey lighten-1" id="aprenda">
-        <div class="row container">
-          <h2 class="header">Aprenda</h2>
-          <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para aprender mais sobre criptografia :)</h6>
-          <br>
-          <a class="waves-effect waves-light btn black" href="aprenda.html">Clique aqui</a>
-        </div>
-    </div>
+    <div class="block">
+      <div class="section grey lighten-1" id="aprenda">
+          <div class="row container">
+            <h2 class="header">Aprenda</h2>
+            <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para aprender mais sobre criptografia :)</h6>
+            <br>
+            <a class="waves-effect waves-light btn black" href="aprenda.html">Clique aqui</a>
+          </div>
+      </div>
 
-    <div class="parallax-container">
-      <div class="parallax"><img src="imagens/morfeu.jpg"></div>
-    </div>
+      <div class="parallax-container">
+        <div class="parallax"><img src="imagens/morfeu.jpg"></div>
+      </div>
 
-    <div class="section grey lighten-1" id="quiz">
-        <div class="row container">
-          <h2 class="header">Quiz</h2>
-          <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para fazer nosso quiz :)</h6>
-          <br>
-          <a class="waves-effect waves-light btn black" href="quiz.html">Clique aqui</a>
-        </div>
-    </div>
+      <div class="section grey lighten-1" id="quiz">
+          <div class="row container">
+            <h2 class="header">Quiz</h2>
+            <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para fazer nosso quiz :)</h6>
+            <br>
+            <a class="waves-effect waves-light btn black" href="quiz.html">Clique aqui</a>
+          </div>
+      </div>
 
-    <div class="parallax-container">
-      <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
-    </div>
+      <div class="parallax-container">
+        <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
+      </div>
 
-    <div class="section grey lighten-1" id="tradutor">
-        <div class="row container">
-          <h2 class="header">Tradutor</h2>
-          <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para conferir nosso tradutor :)</h6>
-          <br>
-          <a class="waves-effect waves-light btn black" href="tradutor.html">Clique aqui</a>
-        </div>
-    </div>
+      <div class="section grey lighten-1" id="tradutor">
+          <div class="row container">
+            <h2 class="header">Tradutor</h2>
+            <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para conferir nosso tradutor :)</h6>
+            <br>
+            <a class="waves-effect waves-light btn black" href="tradutor.html">Clique aqui</a>
+          </div>
+      </div>
 
-    <div class="parallax-container">
-      <div class="parallax"><img src="imagens/morfeu.jpg"></div>
-    </div>
+      <div class="parallax-container">
+        <div class="parallax"><img src="imagens/morfeu.jpg"></div>
+      </div>
 
-    <div class="section grey lighten-1" id="login">
-        <div class="row container">
-          <h2 class="header">Login</h2>
-          <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para fazer login/registrar :)</h6>
-          <br>
-          <a class="waves-effect waves-light btn black" href="login.html">Clique aqui</a>
-        </div>
-    </div>
+      <div class="section grey lighten-1" id="login">
+          <div class="row container">
+            <h2 class="header">Login</h2>
+            <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para fazer login/registrar :)</h6>
+            <br>
+            <a class="waves-effect waves-light btn black" href="login.html">Clique aqui</a>
+          </div>
+      </div>
 
-    <div class="parallax-container">
-      <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
+      <div class="parallax-container">
+        <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
+      </div>
     </div>
 
   <!-- FOOTER -->
@@ -121,12 +131,16 @@
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    <script>
-    	$(document).ready(function(){
-   			$('.slider').slider();
-  		});
-
       $(document).ready(function(){
         $('.parallax').parallax();
+      });
+
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+
+      $(document).ready(function(){
+        $('.target').pushpin();
       });
     </script>
 </body>

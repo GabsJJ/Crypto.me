@@ -33,6 +33,14 @@
         		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
         		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
       		</ul>
+
+          <ul id="slide-out" class="sidenav">
+            <li><a class="waves-effect" href="principal.html">Home</a></li>
+            <li><a class="waves-effect" href="aprenda.html">Aprenda</a></li>
+            <li><a class="waves-effect" href="quiz.html">Quiz</a></li>
+            <li><a class="waves-effect" href="login.html">Login/Register</a></li>
+          </ul>
+          <a data-target="slide-out" class="sidenav-trigger" href="#"><i class="material-icons">menu</i></a>
     	</div>
   		</nav>
 	</header>
@@ -111,6 +119,10 @@
     $(document).ready(function(){
       $('select').formSelect();
     });
+
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
   </script>
 </body>
 </html>

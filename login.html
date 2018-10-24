@@ -4,7 +4,6 @@
 		<title>Crypto.me - Login</title>
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
-		<link rel="stylesheet" type="text/css" href="css/estilo-login.css">
 
 		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
@@ -32,6 +31,14 @@
         		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
         		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
       		</ul>
+
+          <ul id="slide-out" class="sidenav">
+            <li><a class="waves-effect" href="principal.html">Home</a></li>
+            <li><a class="waves-effect" href="aprenda.html">Aprenda</a></li>
+            <li><a class="waves-effect" href="quiz.html">Quiz</a></li>
+            <li><a class="waves-effect" href="tradutor.html">Tradutor</a></li>
+          </ul>
+          <a data-target="slide-out" class="sidenav-trigger" href="#"><i class="material-icons">menu</i></a>
     	</div>
   		</nav>
 	</header>
@@ -126,5 +133,11 @@
 
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+   <script>
+     $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+   </script>
 	</body>
 </html>
