@@ -4,10 +4,11 @@
 		<title>Crypto.me - Quiz</title>
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
+        <link rel="stylesheet" type="text/css" href="css/estilo-quiz.css">
     
 		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
-    <script type="text/javascript" src="js/jsQuiz.js"></script>
+        <script type="text/javascript" src="js/jsQuiz.js"></script>
 
 		<!-- Fontes -->
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
@@ -48,7 +49,10 @@
   <div class="row container">
       <h2>Quiz</h2>
 
-      <div class="row">
+      <div class="row" style=".row .input-field input:focus {
+                                border-bottom: 1px solid red !important;
+                                box-shadow: 0 1px 0 0 red !important;
+                              }">
         <form class="col s12">
           <div class="row">
             <div class="input-field col s12">

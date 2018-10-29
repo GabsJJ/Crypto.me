@@ -69,9 +69,14 @@ function MostrarQuestoes()
 //Verificando se as respostas estão corretas
 function VerificarQuestoes()
 {
+	var rows = document.getElementById("row");
+	var inputField = document.getElementById("input-field");
 	for(i = 0; i < tamanho; i++)
 	{
 		if(document.getElementById("t" + (i + 1)).value != questoes[i].resposta)
-			alert("Resposta " + (i + 1) + " está errada!");
+		{
+			rows.style.borderBottom = "1px solid red !important";
+			rows.style.boxShadow    = "0 1px 0 0 red !important";
+		}
 	}
 }
