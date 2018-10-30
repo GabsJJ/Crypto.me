@@ -26,10 +26,10 @@
       		<a href="principal.html" class="brand-logo center" id="logo">Crypto.me</a>
       		<ul id="nav-mobile" class="right hide-on-med-and-down">
         		<li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="#aprenda">Aprenda</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="#quiz">Quiz</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="#tradutor">Tradutor</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="#login">Fazer Login</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="#aprenda" class="nav-link scroll">Aprenda</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="#quiz" class="nav-link scroll">Quiz</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="#tradutor" class="nav-link scroll">Tradutor</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="#login" class="nav-link scroll">Fazer Login</a></li>
       		</ul>
 
           <ul id="slide-out" class="sidenav">
@@ -142,6 +142,36 @@
       $(document).ready(function(){
         $('.target').pushpin();
       });
+    </script>
+
+    <script>
+      $(document).ready(function() {
+  
+        var scrollLink = $('.scroll');
+  
+        // Smooth scrolling
+        scrollLink.click(function(e) {
+        e.preventDefault();
+        $('body,html').animate({
+          scrollTop: $(this.hash).offset().top
+          }, 1000 );
+        });
+  
+        // Active link switching
+        $(window).scroll(function() {
+          var scrollbarLocation = $(this).scrollTop();
+    
+          scrollLink.each(function() {
+      
+          var sectionOffset = $(this.hash).offset().top - 20;
+      
+          if ( sectionOffset <= scrollbarLocation ) {
+            $(this).parent().addClass('active');
+            $(this).parent().siblings().removeClass('active');
+          }
+        })
+      })
+    })
     </script>
 </body>
 </html>
