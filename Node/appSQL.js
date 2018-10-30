@@ -48,3 +48,14 @@ const s = requisicao.body.nSenha.substring(0,50);
 console.log(e, u, s);
 execSQL(`INSERT INTO Usuario(email, username, senha) VALUES('${e}','${u}','${s}')`,resposta);
 })
+
+rota.get('/CriptoCategorias', (requisicao, resposta) =>{
+execSQL('SELECT * FROM CriptoCategorias', resposta);
+})
+
+rota.get('/Criptografia/:idCategoria', (requisicao, resposta) => {
+let filtro = '';
+if (requisicao.params.idCategoria)
+filtro = ' WHERE idCategoria=' + requisicao.params.idCategoria;
+execSQL('SELECT * from Criptografia' + filtro, resposta);
+})

@@ -6,6 +6,7 @@
 
 		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
+    <script type="text/javascript" src="js/jsAprenda.js"></script>
 
 		<!-- Fontes -->
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
@@ -17,7 +18,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 
-	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
+	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');
+                PegarBanco();">
     
 	<!-- HEADER -->
   <header>
@@ -47,8 +49,11 @@
   <div class="row container">
     <section>
         <h2>Aprenda</h2>
+
+      <ul class="collapsible" id="tipos">
+      </ul>
     </section>
-  </div>
+    </div>
 
     <!-- FOOTER -->
   <footer class="page-footer grey darken-3">
@@ -83,6 +88,14 @@
       $(document).ready(function(){
         $('.sidenav').sidenav();
       });
+
     </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+      $('.collapsible').collapsible();
+      });
+    </script>
+
 </body>
 </html>
