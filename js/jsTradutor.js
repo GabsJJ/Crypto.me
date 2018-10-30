@@ -20,6 +20,10 @@ function criptografar(mensagem, idCripto, c)
             else
                 alert("Por favor, insira uma chave válida!");
             break;
+
+        case "3":
+            nMensagem = cBinario(mensagem);
+            break;
             
         default:
             nMensagem = mensagem;
@@ -46,6 +50,10 @@ function descriptografar(mensagem, idCripto, c)
                 nMensagem = DEScaesar(mensagem, chave);
             else
                 alert("Por favor, insira uma chave válida!");
+            break;
+
+        case "3":
+            nMensagem = DESbinario(mensagem);
             break;
             
         default:
@@ -225,6 +233,16 @@ function cA1Z26 (mensagem)
     return resul.substring(0, resul.length - 1);
 }
 
+function cBinario(mensagem)
+{
+    var numero =
+    do
+    {
+
+    }
+    while(numero < 2)
+}
+
 /*Descriptografar*/
 function DEScaesar(mensagem, chave)
 {
@@ -317,6 +335,11 @@ function DEScA1Z26(mensagem)
     }
 
     return result;
+}
+
+function DESbinario(mensagem)
+{
+
 }
 
 /*Funções da página*/
