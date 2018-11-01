@@ -20,6 +20,7 @@
 	</head>
 
 	<!-- HEADER -->
+  <body onload="pegarUsers();">
 	<header>
 		<nav>
     	<div class="nav-wrapper grey darken-4">
@@ -48,17 +49,17 @@
 		<h2>Revele seu Crypto</h2>
 		<section>
 			<div class="row">
-    			<form class="col s12">
+    			<form class="col s12" action="http://localhost:3000/Usuario" method="post" onsubmit="return verificarConta();">
       				<div class="row">
         				<div class="input-field col s6">
                   <i class="material-icons prefix">email</i>
-                    <input id="emailS" type="email" class="validate" name="nEmail">
+                    <input id="emailS" type="email" class="validate" name="nEmail" required>
                     <label for="emailS">Email</label>
                     <span class="helper-text" data-error="Email inválido" data-success="Correto">Digite o email</span>
                 </div>
        	        <div class="input-field col s6">
        	            <i class="material-icons prefix">vpn_key</i>
-          		    <input id="password" type="password" class="validate">
+          		    <input id="password" type="password" class="validate" required>
           		    <label for="password">Senha</label>
                 </div>
       				</div>
@@ -72,28 +73,28 @@
 		<h2>Torne-se um Crypto</h2>
 		<section>
 			<div class="row">
-    			<form class="col s12" action="http://localhost:3000/Usuario" method="post">
+    			<form class="col s12" action="http://localhost:3000/Usuario" method="post" onsubmit="return VerficarCampos();">
       				<div class="row">
         				<div class="input-field col s6">
           					<i class="material-icons prefix">account_circle</i>
-          					<input id="usernameR" type="text" class="validate" name="nUser">
+          					<input id="usernameR" type="text" class="validate" name="nUser" required>
           					<label for="usernameR">Username</label>
         				</div>
         				<div class="input-field col s6">
         					<i class="material-icons prefix">email</i>
-          					<input id="email" type="email" class="validate" name="nEmail">
+          					<input id="email" type="email" class="validate" name="nEmail" required>
           					<label for="email">Email</label>
           					<span class="helper-text" data-error="Email inválido" data-success="Correto">Digite o email</span>
        					</div>
        					<div class="input-field col s6">
        						<i class="material-icons prefix">vpn_key</i>
-          					<input id="passwordR" type="password" class="validate" name="nSenha">
+          					<input id="passwordR" type="password" class="validate" name="nSenha" required>
           					<label for="passwordR">Senha</label>
         				</div>
         				<div class="input-field col s6">
         					<i class="material-icons prefix">vpn_key</i>
-          					<input id="passwordRR" type="password" class="validate">
-          					<label for="passwordRR">Repete a senha</label>
+          					<input id="passwordRR" type="password" class="validate" required>
+          					<label for="passwordRR">Repita a senha</label>
         				</div>
       				</div>
 

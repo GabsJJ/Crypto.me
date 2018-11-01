@@ -1,6 +1,7 @@
 --Criando as tabelas
 create table Usuario(
-email varchar(254) primary key,
+id int identity(1,1) primary key,
+email varchar(254) not null,
 username varchar(50) not null,
 senha varchar(50) not null
 )
@@ -22,7 +23,7 @@ constraint fkCategoria foreign key(idCategoria) references CriptoCategorias(id)
 )
 
 create table Acesso(
-idAcesso int primary key,
+idAcesso int identity(1,1) primary key,
 idUsuario int not null,
 dataAcesso date not null,
 horaAcesso time not null
@@ -56,3 +57,5 @@ select * from Criptografia
 insert into Quiz values(1,'Criptografe "Ola mundo" usando A1Z26', '15-12-1 13-21-14-4-15')
 insert into Quiz values(2,'Descriptografe "3-18-9-16-20-15-7-18-1-6-9-1" usando A1Z26', 'Criptografia')
 insert into Quiz values(3,'Criptografe "Julio Cesar" usando a Cifra de Cesar com a rotação nº13', 'WHYVB PRFNE')
+
+select * from Usuario

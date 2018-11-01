@@ -34,6 +34,10 @@ rota.get('/Quiz', (requisicao, resposta) =>{
 execSQL('SELECT * FROM Quiz', resposta);
 })
 
+rota.get('/QUsuario', (requisicao, resposta) =>{
+execSQL('SELECT * FROM Usuario', resposta);
+})
+
 rota.get('/Usuario/:email', (requisicao, resposta) => {
 let filtro = '';
 if (requisicao.params.email)
@@ -65,4 +69,12 @@ let filtro = '';
 if (requisicao.params.id)
 filtro = ' WHERE id=' + requisicao.params.id;
 execSQL('SELECT * from Criptografia' + filtro, resposta);
+})
+
+rota.post('/Acesso', (requisicao, resposta) => {
+const e = requisicao.body.nEmail.substring(0,254);
+const u = requisicao.body.nUser.substring(0,50);
+const s = requisicao.body.nSenha.substring(0,50);
+console.log(e, u, s);
+execSQL(`INSERT INTO Usuario(email, username, senha) VALUES('${e}','${u}','${s}')`,resposta);
 })

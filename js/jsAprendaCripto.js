@@ -27,7 +27,7 @@ function novoConteudo(response)
 	tela.innerHTML += "<h2>" + arr[0].nome + "</h2> <br>";
 	tela.innerHTML += "<h5>" + arr[0].descricao + "</h5> <br>";
     tela.innerHTML += "<h5> Dificuldade: " + df[arr[0].dificuldade - 1] + "</h5> <br>";
-    tela.innerHTML += "<h5>" + arr[0].explicacao + "</h5> <br><br>";
+    tela.innerHTML += "<h5>" + arr[0].explicacao + "</h5> <br>";
 
     tela.innerHTML += "<a class='waves-effect waves-light btn' onclick='location.reload();'> Voltar </a>";
 }
