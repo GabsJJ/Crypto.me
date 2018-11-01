@@ -76,27 +76,32 @@ function caesar(mensagem, chave)
     outText = "";
     var i = 0;
     
-    while(i < tamanho){ 
-      if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
-      {
-          indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
-          outText += alf[(indiceDaLetraAtual + (chave * sinal)) % alf.length];
-          i++;
-      }
-      else{
-        if(input.substring(i,(i+1)) == " ")
-        {
-            outText += input.substring(i,(i+1));
-            i++;
+    if(chave < 26)
+    {
+        while(i < tamanho){ 
+          if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
+          {
+              indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
+              outText += alf[(indiceDaLetraAtual + (chave * sinal)) % alf.length];
+              i++;
+          }
+          else{
+            if(input.substring(i,(i+1)) == " ")
+            {
+                outText += input.substring(i,(i+1));
+                i++;
+            }
+            else
+            {
+                alert("Não inclua acentos/Caracteres especiais nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
+                outText = "";
+                break;  
+            }
+          }
         }
-        else
-        {
-            alert("Não inclua acentos/Caracteres especiais nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
-            outText = "";
-            break;  
-        }
-      }
     }
+    else
+        alert("Insira uma chave menor que 26");
 
     return outText;
 }
@@ -235,12 +240,35 @@ function cA1Z26 (mensagem)
 
 function cBinario(mensagem)
 {
-    var numero =
-    do
+    var resto = "";
+    if(isNaN(parseInt(mensagem)) == false)
     {
-
+        var numero = parseInt(mensagem);
+        while(numero >= 1)
+        {
+            resto = "" + (numero % 2) + resto;
+            numero = parseInt(numero / 2);
+        }
     }
-    while(numero < 2)
+    else
+    {
+        var caracters = mensagem;
+        var tam       = caracters.length;
+        var numLetra  = 0; 
+
+        for(var i = 0; i < tam; i++)
+        {
+            numLetra = parseInt(caracters.charCodeAt(i));
+            do
+            {
+                resto = "" + (numLetra % 2) + resto;
+                numLetra = parseInt(numLetra / 2);
+            }
+            while(numLetra >= 1);
+        }
+    }
+
+    return resto;
 }
 
 /*Descriptografar*/
