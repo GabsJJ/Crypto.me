@@ -1,3 +1,5 @@
+var pegar = true;
+
 //Pegando informações do banco e mostrando-as
 function PegarBanco() 
 {
@@ -23,40 +25,45 @@ function PegarCatego(response)
     for(i = 0; i < arr.length; i++)
     {
         var d = arr[i].id;
-        alert(d);
 
-         div.innerHTML +=   "<li onclick='PegarCriptos1(" + d + ");'>" + 
+        div.innerHTML +=   "<li onclick='PegarCriptos1(" + d + ",\"" + arr[i].descricao + "\");'>" + 
                             "<div class='collapsible-header'>" + arr[i].nome + "</div>" + 
                             "<div class='collapsible-body' id='d" + d + "'></div>" +
                             "</li>";
     }
 }
 
-function PegarCriptos1(id)
+function PegarCriptos1(id, descri)
 {
-    var xmlhttp2 = new XMLHttpRequest();
+    if(pegar)
+    {
+        var xmlhttp2 = new XMLHttpRequest();
 
-    xmlhttp2.onreadystatechange=function() {
-        if (this.readyState == 4 && this.status == 200) {
-            //quando os dados retornarem da requisição serão enviados para a função ExibeDados()
-            PegarCriptos(this.responseText, id);
+        xmlhttp2.onreadystatechange=function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //quando os dados retornarem da requisição serão enviados para a função ExibeDados()
+                PegarCriptos(this.responseText, id, descri);
+            }
         }
+
+        var ur = "http://localhost:3000/Criptografia/" + id;
+        xmlhttp2.open("GET", ur , true);
+
+        xmlhttp2.send();
     }
-
-    var ur = "http://localhost:3000/Criptografia/" + id;
-    xmlhttp2.open("GET", ur , true);
-
-    xmlhttp2.send();
 }
 
-function PegarCriptos(response, id) 
+function PegarCriptos(response, id, descri) 
 {
-    var arr2 = JSON.parse(response);
-    var div2 = document.getElementById("d" + id);
-    div2.innerHTML = "";
-
-    for(i = 0; i < arr2.length; i++)
+    if(pegar)
     {
-        div2.innerHTML += "<a class='waves-effect waves-light btn-small'>"+arr2[i].nome+"</a> <br>"
+        var arr2 = JSON.parse(response);
+        var div2 = document.getElementById("d" + id);
+        div2.innerHTML = descri + "<br><br>";
+
+        for(i = 0; i < arr2.length; i++)
+        {
+            div2.innerHTML += "<a class='waves-effect waves-light btn-small' onclick='pegar = false; iniciar(" + arr2[i].id + ")'>"+arr2[i].nome+"</a> <br>"
+        }
     }
 }

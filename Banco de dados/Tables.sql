@@ -41,11 +41,11 @@ insert into CriptoCategorias values(2, 'Complexas', 'Criptografias mais complexa
 insert into CriptoCategorias values(3, 'Mistas'   , 'Criptografias que são compostas por outras criptografias e misturadas com outros algoritmos')
 
 --Criptografias
-insert into Criptografia values(1, 'A1Z26','Essa é uma criptografia simples onde será apenas usada números, sem necessidade de contas complexas',
+insert into Criptografia values(1, 'A1Z26','Essa é uma criptografia simples onde será apenas usada números, sem necessidade de contas complexas.',
 'Cada letra será substituida pelo número da sua posição no alfabeto. Para que os números não se misturem, se usa "-" entre cada letra e um espaço
-entre cada palavra. Acentos não são usados e não há diferença entre letras maiúsculas e minúsculas',2,1)
+entre cada palavra. Acentos não são usados e não há diferença entre letras maiúsculas e minúsculas.',2,1)
 
-insert into Criptografia values(2,'Cifra de César','Esta é uma das mais antigas e mais simples forma de criptografia existente',
+insert into Criptografia values(2,'Cifra de César','Esta é uma das mais antigas e mais simples forma de criptografia existente.',
 'A Cifra de César consiste basicamente em um processo de substituição com base em um número que indica quantas posições o alfabeto original
 vai se deslocar. Um exemplo, se esse número for igual a 3, o alfabeto vai se deslocar em 3 posições, ou seja, a letra A passa a ser D, B passa
 a ser E, e assim por diante.',1,2)

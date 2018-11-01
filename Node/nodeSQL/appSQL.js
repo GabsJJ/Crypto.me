@@ -59,10 +59,3 @@ if (requisicao.params.idCategoria)
 filtro = ' WHERE idCategoria=' + requisicao.params.idCategoria;
 execSQL('SELECT * from Criptografia' + filtro, resposta);
 })
-
-rota.get('/QCriptografia/:id', (requisicao, resposta) => {
-let filtro = '';
-if (requisicao.params.id)
-filtro = ' WHERE id=' + requisicao.params.id;
-execSQL('SELECT * from Criptografia' + filtro, resposta);
-})
