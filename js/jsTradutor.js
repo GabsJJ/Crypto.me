@@ -390,6 +390,10 @@ function TestarChave(valor)
         case "2":
             TravarChave(false);
             break;
+
+        case "3":
+            TravarChave(true);
+            break;
     }
 }
 

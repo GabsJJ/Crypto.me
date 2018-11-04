@@ -76,5 +76,5 @@ const e = requisicao.body.nEmail.substring(0,254);
 const u = requisicao.body.nUser.substring(0,50);
 const s = requisicao.body.nSenha.substring(0,50);
 console.log(e, u, s);
-execSQL(`INSERT INTO Usuario(email, username, senha) VALUES('${e}','${u}','${s}')`,resposta);
+execSQL(`INSERT INTO Acesso(email, username, senha) VALUES('${e}','${u}','${s}')`,resposta);
 })
