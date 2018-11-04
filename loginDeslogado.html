@@ -8,6 +8,7 @@
 		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
     <script type="text/javascript" src="js/jsLogin.js"></script>
+    <script type="text/javascript" src="js/jsBloqueio.js"></script>
 
 		<!-- Fontes -->
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
@@ -24,20 +25,20 @@
 	<header>
 		<nav>
     	<div class="nav-wrapper grey darken-4">
-      		<a href="principal.html" class="brand-logo center" id="logo">Crypto.me</a>
+      		<a href="principalDeslogado.html" class="brand-logo center" id="logo">Crypto.me</a>
       		<ul id="nav-mobile" class="right hide-on-med-and-down">
-        		<li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Home');" href="principalDeslogado.html">Home</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" onclick="bloqueado();">Aprenda</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" onclick="bloqueado();">Quiz</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" onclick="bloqueado();">Tradutor</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" onclick="bloqueado();">Fazer Login</a></li>
       		</ul>
 
           <ul id="slide-out" class="sidenav">
-            <li><a class="waves-effect" href="principal.html">Home</a></li>
-            <li><a class="waves-effect" href="aprenda.html">Aprenda</a></li>
-            <li><a class="waves-effect" href="quiz.html">Quiz</a></li>
-            <li><a class="waves-effect" href="tradutor.html">Tradutor</a></li>
+            <li><a class="waves-effect" href="principalDeslogado.html">Home</a></li>
+            <li><a class="waves-effect" onclick="bloqueado();">Aprenda</a></li>
+            <li><a class="waves-effect" onclick="bloqueado();">Quiz</a></li>
+            <li><a class="waves-effect" onclick="bloqueado();">Tradutor</a></li>
           </ul>
           <a data-target="slide-out" class="sidenav-trigger" href="#"><i class="material-icons">menu</i></a>
     	</div>
@@ -104,16 +105,6 @@
     			</form>
   			</div>
 		</section>
-
-    <h2>Esconda seu Crypto</h2>
-    <section>
-      <div class="row">
-        <br>
-          <a href="principalDeslogado.html"><button class="btn waves-effect waves-light" name="action">Fazer logoff
-            <i class="material-icons right">backspace</i>
-          </button></a>
-      </div>
-    </section>
 	</div>
 
 

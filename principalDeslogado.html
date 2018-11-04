@@ -1,0 +1,178 @@
+<html>
+    <head>
+		<title>Crypto.me</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
+
+		<!-- JavaScript e jQuery-->
+		<script type="text/javascript" src="js/jsGeral.js"></script>
+    <script type="text/javascript" src="js/jsBloqueio.js"></script>
+
+		<!-- Fontes -->
+		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+		<!-- Materialize -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+
+	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');">
+
+	<!-- HEADER -->
+	<header>
+		<nav>
+    	<div class="nav-wrapper grey darken-4">
+      		<a href="principalDeslogado.html" class="brand-logo center" id="logo">Crypto.me</a>
+      		<ul id="nav-mobile" class="right hide-on-med-and-down">
+        		<li><a onmouseover="mouseOverMenu(this, 'Home');" href="principalDeslogado.html">Home</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="#aprenda" class="nav-link scroll">Aprenda</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="#quiz" class="nav-link scroll">Quiz</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="#tradutor" class="nav-link scroll">Tradutor</a></li>
+        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="#login" class="nav-link scroll">Fazer Login</a></li>
+      		</ul>
+
+          <ul id="slide-out" class="sidenav">
+            <li><a class="waves-effect" href="aprenda.html">Aprenda</a></li>
+            <li><a class="waves-effect" href="quiz.html">Quiz</a></li>
+            <li><a class="waves-effect" href="tradutor.html">Tradutor</a></li>
+            <li><a class="waves-effect" href="login.html">Login/Register</a></li>
+          </ul>
+          <a data-target="slide-out" class="sidenav-trigger" href="#"><i class="material-icons">menu</i></a>
+    	</div>
+  		</nav>
+	</header>
+	
+  <!-- CONTENT -->
+    <div class="">
+      <img src="imagens/matrix-bode-na-sala.jpg" style="width: 100%; height: 100%;">
+    </div>
+
+    <div class="block">
+      <div class="section grey lighten-1" id="aprenda">
+          <div class="row container">
+            <h2 class="header">Aprenda</h2>
+            <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para aprender mais sobre criptografia :)</h6>
+            <br>
+            <a class="waves-effect waves-light btn black" onclick="bloqueado();">Clique aqui</a>
+          </div>
+      </div>
+
+      <div class="parallax-container">
+        <div class="parallax"><img src="imagens/morfeu.jpg"></div>
+      </div>
+
+      <div class="section grey lighten-1" id="quiz">
+          <div class="row container">
+            <h2 class="header">Quiz</h2>
+            <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para fazer nosso quiz :)</h6>
+            <br>
+            <a class="waves-effect waves-light btn black" onclick="bloqueado();">Clique aqui</a>
+          </div>
+      </div>
+
+      <div class="parallax-container">
+        <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
+      </div>
+
+      <div class="section grey lighten-1" id="tradutor">
+          <div class="row container">
+            <h2 class="header">Tradutor</h2>
+            <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para conferir nosso tradutor :)</h6>
+            <br>
+            <a class="waves-effect waves-light btn black" onclick="bloqueado();">Clique aqui</a>
+          </div>
+      </div>
+
+      <div class="parallax-container">
+        <div class="parallax"><img src="imagens/morfeu.jpg"></div>
+      </div>
+
+      <div class="section grey lighten-1" id="login">
+          <div class="row container">
+            <h2 class="header">Login</h2>
+            <h6 class="grey-text text-darken-3 lighten-3">Clique no botão abaixo para fazer login/registrar :)</h6>
+            <br>
+            <a class="waves-effect waves-light btn black" href="loginDeslogado.html">Clique aqui</a>
+          </div>
+      </div>
+
+      <div class="parallax-container">
+        <div class="parallax"><img src="imagens/matrix-bode-na-sala.jpg"></div>
+      </div>
+    </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer grey darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Esse é o nosso site, esperamos que tenha gostado</h5>
+                <p class="grey-text text-lighten-4">Feito por alunos do COTUCA</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://pt-br.facebook.com/">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/?lang=pt-br">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/?hl=pt-br">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/">YouTube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright grey darken-4">
+            <div class="container">
+            © 2018 Crypto.me - Todos os direitos reservados.
+            </div>
+          </div>
+   </footer>
+
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script>
+      $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+
+      $(document).ready(function(){
+        $('.target').pushpin();
+      });
+    </script>
+
+    <script>
+      $(document).ready(function() {
+  
+        var scrollLink = $('.scroll');
+  
+        // Smooth scrolling
+        scrollLink.click(function(e) {
+        e.preventDefault();
+        $('body,html').animate({
+          scrollTop: $(this.hash).offset().top
+          }, 1000 );
+        });
+  
+        // Active link switching
+        $(window).scroll(function() {
+          var scrollbarLocation = $(this).scrollTop();
+    
+          scrollLink.each(function() {
+      
+          var sectionOffset = $(this.hash).offset().top - 20;
+      
+          if ( sectionOffset <= scrollbarLocation ) {
+            $(this).parent().addClass('active');
+            $(this).parent().siblings().removeClass('active');
+          }
+        })
+      })
+    })
+    </script>
+</body>
+</html>

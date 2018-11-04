@@ -1,0 +1,6 @@
+-Adicionar binário no tradutor e no aprenda
+-Fazer uma criptografia mista(menor prioridade)
+-Terminar o login
+-Arrumar o redirect
+-Relatórios?
+-Fazer até 7 questões

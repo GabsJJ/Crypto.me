@@ -1,7 +1,6 @@
 var todasQuestoes = new Array();
 var questoes = new Array();
-const tamanho = 3;
-const qtdQuestoes = 3;
+const tamanho = 7;
 
 //Pegando informações do banco e mostrando-as
 function PegarBanco() 
@@ -41,7 +40,7 @@ function SelecionarQuestoes()
 		var indice = -1;
 		do
 		{
-			indice = Math.floor(Math.random() * qtdQuestoes);
+			indice = Math.floor(Math.random() * todasQuestoes.length);
 
 			for(a = 0; a < questoes.length; a++)
 				if(indice + 1 == questoes[a].id)
