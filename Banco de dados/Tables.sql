@@ -23,10 +23,10 @@ constraint fkCategoria foreign key(idCategoria) references CriptoCategorias(id)
 )
 
 create table Acesso(
-idAcesso int identity(1,1) primary key,
+id int identity(1,1) primary key,
 idUsuario int not null,
-dataAcesso date not null,
-horaAcesso time not null
+dataAcesso varchar(10) not null,
+horaAcesso varchar(2) not null
 )
 
 create table Quiz(
@@ -35,7 +35,7 @@ questao varchar(200) not null,
 resposta varchar(200) not null
 )
 
---Colocando dodos0
+--Colocando dodos
 --Categorias
 insert into CriptoCategorias values(1, 'Simples'  , 'Criptografias mais fáceis de entender, compostas de algoritmos de poucas etapas')
 insert into CriptoCategorias values(2, 'Complexas', 'Criptografias mais complexas de entender, compostas de algoritmos de várias etapas')
@@ -59,3 +59,5 @@ insert into Quiz values(2,'Descriptografe "3-18-9-16-20-15-7-18-1-6-9-1" usando 
 insert into Quiz values(3,'Criptografe "Julio Cesar" usando a Cifra de Cesar com a rotação nº13', 'WHYVB PRFNE')
 
 select * from Usuario
+
+select * from Acesso

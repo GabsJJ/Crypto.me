@@ -49,7 +49,6 @@ rota.post('/Usuario', (requisicao, resposta) => {
 const e = requisicao.body.nEmail.substring(0,254);
 const u = requisicao.body.nUser.substring(0,50);
 const s = requisicao.body.nSenha.substring(0,50);
-console.log(e, u, s);
 execSQL(`INSERT INTO Usuario(email, username, senha) VALUES('${e}','${u}','${s}')`,resposta);
 })
 
@@ -72,9 +71,9 @@ execSQL('SELECT * from Criptografia' + filtro, resposta);
 })
 
 rota.post('/Acesso', (requisicao, resposta) => {
-const e = requisicao.body.nEmail.substring(0,254);
-const u = requisicao.body.nUser.substring(0,50);
-const s = requisicao.body.nSenha.substring(0,50);
-console.log(e, u, s);
-execSQL(`INSERT INTO Acesso(email, username, senha) VALUES('${e}','${u}','${s}')`,resposta);
+var date = new Date();
+const i = requisicao.body.id;
+const d = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();  //Um mês atrás??
+const h = date.getHours() + "";
+execSQL(`INSERT INTO Acesso(idUsuario, dataAcesso, horaAcesso) VALUES('${i}','${d}','${h}')`,resposta);
 })

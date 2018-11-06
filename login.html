@@ -8,6 +8,7 @@
 		<!-- JavaScript e jQuery-->
 		<script type="text/javascript" src="js/jsGeral.js"></script>
     <script type="text/javascript" src="js/jsLogin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 		<!-- Fontes -->
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
@@ -49,7 +50,7 @@
 		<h2>Revele seu Crypto</h2>
 		<section>
 			<div class="row">
-    			<form class="col s12" action="http://localhost:3000/Usuario" method="post" onsubmit="return verificarConta();">
+    			<form class="col s12" action="" method="" id="f1">
       				<div class="row">
         				<div class="input-field col s6">
                   <i class="material-icons prefix">email</i>
@@ -63,17 +64,18 @@
           		    <label for="password">Senha</label>
                 </div>
       				</div>
+
+            <a class="btn waves-effect waves-light" name="action" onclick="verificarConta();">Login
+            <i class="material-icons right">send</i></a>
+            <input id="id" name="id" style="visibility: hidden;">
     			</form>
-    			<button class="btn waves-effect waves-light" type="submit" name="action">Login
-    				<i class="material-icons right">send</i>
-  				</button>
   			</div>
 		</section>
 
 		<h2>Torne-se um Crypto</h2>
 		<section>
 			<div class="row">
-    			<form class="col s12" action="http://localhost:3000/Usuario" method="post" onsubmit="return VerficarCampos();">
+    			<form class="col s12" action="" method="" id="f2">
       				<div class="row">
         				<div class="input-field col s6">
           					<i class="material-icons prefix">account_circle</i>
@@ -98,9 +100,9 @@
         				</div>
       				</div>
 
-            <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
+            <a class="btn waves-effect waves-light" name="action" onclick="VerficarCampos();">Registrar
             <i class="material-icons right">send</i>
-          </button>
+          </a>
     			</form>
   			</div>
 		</section>
