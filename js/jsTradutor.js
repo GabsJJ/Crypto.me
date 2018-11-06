@@ -255,17 +255,28 @@ function cBinario(mensagem)
         var caracters = mensagem;
         var tam       = caracters.length;
         var numLetra  = 0; 
+        var numAtual  = "";
 
         for(var i = 0; i < tam; i++)
         {
             numLetra = parseInt(caracters.charCodeAt(i));
+            resto = "";
             do
             {
                 resto = "" + (numLetra % 2) + resto;
                 numLetra = parseInt(numLetra / 2);
+
+                if(numLetra == 0)
+                {
+                    resto = "" + (numLetra % 2) + resto;
+                    break;
+                }
             }
-            while(numLetra >= 1);
+            while(numLetra >= 0);
+
+            numAtual = numAtual + " " + resto;
         }
+        resto = numAtual;
     }
 
     return resto;
@@ -367,7 +378,32 @@ function DEScA1Z26(mensagem)
 
 function DESbinario(mensagem)
 {
+    var numeroLetra    = mensagem;
+    var tamNum         = numeroLetra.length;
+    var umNumeroString = "";
+    var umNumero       = 0;
+    var conv           = 0;
+    var indiceNum      = tamNum-1;
 
+    var i = 0;
+    while(i < tamNum)
+    {
+        umNumeroString = numeroLetra.substring(i,i+1);
+        if(umNumeroString != " ")
+        {
+            alert(i);
+            umNumero = parseInt(umNumeroString);
+            conv     += umNumero * Math.pow(2,indiceNum); 
+            indiceNum--;
+            i++;
+        }
+        else
+            i++;
+    }
+    
+    numeroLetra = String.fromCharCode(conv);
+
+    return numeroLetra;
 }
 
 /*Funções da página*/
