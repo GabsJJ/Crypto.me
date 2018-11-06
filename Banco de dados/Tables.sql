@@ -60,4 +60,4 @@ insert into Quiz values(3,'Criptografe "Julio Cesar" usando a Cifra de Cesar com
 
 select * from Usuario
 
-select * from Acesso
+select * from Quiz
