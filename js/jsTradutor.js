@@ -378,32 +378,37 @@ function DEScA1Z26(mensagem)
 
 function DESbinario(mensagem)
 {
-    var numeroLetra    = mensagem;
-    var tamNum         = numeroLetra.length;
-    var umNumeroString = "";
-    var umNumero       = 0;
-    var conv           = 0;
-    var indiceNum      = tamNum-1;
+    var palavraBinario  = "";
+    var umNumero        = 0;
+    var conv            = new Array();
+    var caracterAtual   = "";
+    var indPalavraAtual = 0;
+    var mensagemDes     = "";
+    var tamNum          = mensagem.length;
 
     var i = 0;
     while(i < tamNum)
     {
-        umNumeroString = numeroLetra.substring(i,i+1);
-        if(umNumeroString != " ")
+        palavraBinario += mensagem.substring(i,i+1);
+        caracterAtual      = mensagem.substring(i,i+1);
+        if(caracterAtual != " ")
         {
-            alert(i);
-            umNumero = parseInt(umNumeroString);
-            conv     += umNumero * Math.pow(2,indiceNum); 
-            indiceNum--;
+            umNumero = parseInt(palavraBinario);
+            conv[indPalavraAtual] = parseInt(umNumero, 2);
             i++;
         }
         else
+        {
+            indPalavraAtual++;
+            palavraBinario = "";
             i++;
+        }
     }
     
-    numeroLetra = String.fromCharCode(conv);
-
-    return numeroLetra;
+    for(var ind = 0; ind < conv.length; ind++)
+        mensagemDes += String.fromCharCode(conv[ind]);
+    
+    return mensagemDes;
 }
 
 /*Funções da página*/
