@@ -1,4 +1,4 @@
-const df = ["■ ● ●", "■ ■ ●", "■ ■ ■"]
+const df = ["★ ● ●", "★ ★ ●", "★ ★ ★"]
 
 function iniciar(id)
 {

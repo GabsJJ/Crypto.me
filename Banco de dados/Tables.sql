@@ -51,6 +51,10 @@ insert into Criptografia values(2,'Cifra de César','Esta é uma das mais antigas 
 vai se deslocar. Um exemplo, se esse número for igual a 3, o alfabeto vai se deslocar em 3 posições, ou seja, a letra A passa a ser D, B passa
 a ser E, e assim por diante.',1,2)
 
+insert into Criptografia values(3,'Combined Cipher','Esta criptografia é uma mistura de A1Z26 com Cifra de Cesar na rotação nº 22.',
+'Para utilizar o Combined Cipher deve-se primeiro criptografar a mensagem com Cifra de Cesar na rotação nº 22, depois criptografar
+o resultado com A1Z26. Ambas essas criptografias estão explicados nesse mesmo site.',1,3)
+
 select * from Criptografia
 
 --Quiz

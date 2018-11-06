@@ -1,4 +1,2 @@
 -Adicionar binário no tradutor e no aprenda
--Fazer uma criptografia mista(menor prioridade)
 -Relatórios?
--Fazer até 7 questões
