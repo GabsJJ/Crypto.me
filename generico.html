@@ -1,152 +1,58 @@
 <html>
     <head>
-		<title>Crypto.me</title>
-		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
+    <title>Crypto.me</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/estilo-geral.css">
 
-		<!-- JavaScript e jQuery-->
-		<script type="text/javascript" src="js/jsGeral.js"></script>
+    <!-- JavaScript e jQuery-->
+    <script type="text/javascript" src="js/jsGeral.js"></script>
+    <script type="text/javascript" src="js/jsAprenda.js"></script>
+    <script type="text/javascript" src="js/jsAprendaCripto.js"></script>
 
-		<!-- Fontes -->
-		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
-		<!-- Materialize -->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	</head>
+    <!-- Materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
 
-	<body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');" class="grey lighten-1"  >
+  <body onload="mouseOverMenu(document.getElementById('logo'), 'Crypto.me');
+                PegarBanco();">
+    
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="nav-wrapper grey darken-4">
+          <a href="principal.html" class="brand-logo center" id="logo">Crypto.me</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
+            <li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
+            <li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
+            <li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
+            <li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
+          </ul>
 
-	<!-- HEADER -->
-	<header>
-		<nav>
-    	<div class="nav-wrapper grey darken-4">
-      		<a href="#" class="brand-logo center" id="logo">Crypto.me</a>
-      		<ul id="nav-mobile" class="right hide-on-med-and-down">
-        		<li><a onmouseover="mouseOverMenu(this, 'Home');" href="principal.html">Home</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Aprenda');" href="aprenda.html">Aprenda</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Quiz');" href="quiz.html">Quiz</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Tradutor');" href="tradutor.html">Tradutor</a></li>
-        		<li><a onmouseover="mouseOverMenu(this, 'Fazer Login');" href="login.html">Fazer Login</a></li>
-      		</ul>
-    	</div>
-  		</nav>
-	</header>
-	
-	<!-- SLIDER -->
-  	<div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="imagens/matrix-bode-na-sala.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>Aprenda criptografia de forma fácil!</h3>
-          <a class="waves-effect waves-light btn" href="aprenda.html">Clique aqui!</a>
-        </div>
-      </li>
-      <li>
-        <img src="imagens/matrix-bode-na-sala.jpg"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Faça nosso quiz</h3>
-          <a class="waves-effect waves-light btn" href="quiz.html">Clique aqui!</a>
-        </div>
-      </li>
-      <li>
-        <img src="imagens/matrix-bode-na-sala.jpg"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Teste nosso tradutor</h3>
-          <a class="waves-effect waves-light btn" href="tradutor.html">Clique aqui!</a>
-        </div>
-      </li>
-      <li>
-        <img src="imagens/matrix-bode-na-sala.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>Torne-se um Crypto!</h3>
-          <a class="waves-effect waves-light btn" href="login.html">Clique aqui!</a>
-        </div>
-      </li>
-    </ul>
-  </div>
+          <ul id="slide-out" class="sidenav">
+            <li><a class="waves-effect" href="principal.html">Home</a></li>
+            <li><a class="waves-effect" href="quiz.html">Quiz</a></li>
+            <li><a class="waves-effect" href="tradutor.html">Tradutor</a></li>
+            <li><a class="waves-effect" href="login.html">Login/Register</a></li>
+          </ul>
+          <a data-target="slide-out" class="sidenav-trigger" href="#"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </header>
 
   <!-- CONTENT -->
-  <div class="row container" style="visibility: hidden;">
-  	<section class="col s12 m6 l9">
-  		<h5 class="light">Notícias</h5>
-  		<article class="col s12 l6 xl4">
-  			<div class="row">
-    			<div class="col">
-      			<div class="card">
-        		<div class="card-image">
-          			<img src="imagens/matrix-bode-na-sala.jpg">
-          			<span class="card-title">Notícia 1</span>
-          			<a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        		</div>
-        		<div class="card-content">
-          		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur lobortis velit pulvinar porta. Duis dictum commodo sodales. Vivamus vulputate justo enim, quis</p>
-        	</div>
-      		</div>
-    		</div>
-  			</div>
-  		</article>
-
-  		<article class="col s12 l6 xl4">
-  			<div class="row">
-    			<div class="col">
-      			<div class="card">
-        		<div class="card-image">
-          			<img src="imagens/matrix-bode-na-sala.jpg">
-          			<span class="card-title">Notícia 2</span>
-          			<a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        		</div>
-        		<div class="card-content">
-          		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur lobortis velit pulvinar porta. Duis dictum commodo sodales. Vivamus vulputate justo enim, quis</p>
-        	</div>
-      		</div>
-    		</div>
-  			</div>
-  		</article>
-
-  		<article class="col s12 l6 xl4">
-  			<div class="row">
-    			<div class="col">
-      			<div class="card">
-        		<div class="card-image">
-          			<img src="imagens/matrix-bode-na-sala.jpg">
-          			<span class="card-title">Notícia 3</span>
-          			<a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        		</div>
-        		<div class="card-content">
-          		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur lobortis velit pulvinar porta. Duis dictum commodo sodales. Vivamus vulputate justo enim, quis</p>
-        	</div>
-      		</div>
-    		</div>
-  			</div>
-  		</article>
-  	</section>
-
-  	<aside class="col s12 m6 l3">
-  		<h5 class="light">Dica do dia</h5>
-  		<article>
-  			<div class="row">
-    <div class="col">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Dica 1</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur lobortis velit pulvinar porta. Duis dictum commodo sodales. Vivamus vulputate justo enim, quis</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-        </div>
-      </div>
+  <div class="row container">
+    <section id = "cont">
+    </section>
     </div>
-  </div>
-  		</article>
-  	</aside>
-  </div>
 
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer class="page-footer grey darken-3">
           <div class="container">
             <div class="row">
@@ -172,12 +78,21 @@
           </div>
    </footer>
 
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   <script>
-    	$(document).ready(function(){
-   			$('.slider').slider();
-  		});
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+
     </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+      $('.collapsible').collapsible();
+      });
+    </script>
+
 </body>
 </html>
