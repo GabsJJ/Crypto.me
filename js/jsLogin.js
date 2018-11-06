@@ -46,7 +46,9 @@ function VerficarCampos()
 
     alert("Conta criada com sucesso!");
     pegarUsers();
-    return true;
+    
+    red2($('#f2'));
+    window.location.href = "./principal.html"
 }
 
 //Fazendo login
@@ -54,18 +56,22 @@ function verificarConta()
 {
     var c1 = document.getElementById("emailS");
     var c2 = document.getElementById("password");
-    var senha;
-    var username;
+    var s;
+    var use;
+    var idd;
 
     var achou = false;
     for(i = 0; i < users.length; i++)
+    {
         if(c1.value == users[i].email)
         {
             achou = true;
-            senha = users[i].senha;
-            username = username[i].username;
+            s = users[i].senha;
+            use = users[i].username;
+            idd = users[i].id;
             break;
         }
+    }
 
     if(!achou)
     {
@@ -73,15 +79,36 @@ function verificarConta()
         return false;
     }
 
-    if(senha != c1.value)
+    if(s + "" != c2.value + "")
     {
         alert("Senha inválida!")
         return false;
     }
 
-    alert("Bem-vindo(a) " + username + "!");
+    document.getElementById("id").value = idd + "";
 
-    //inserir dados
+    alert("Bem-vindo(a) " + use + "!");
     
-    return true;
+    red1($('#f1'));
+    window.location.href = "./principal.html"
+
 }
+
+//Redirecionando
+function red1(form){
+    $.post( "http://localhost:3000/Acesso", form.serialize() ).done(function(data){
+        if (!data.erro) {
+            form.each(function(data){
+            });
+        }
+    });
+};
+
+function red2(form){
+    $.post( "http://localhost:3000/Usuario", form.serialize() ).done(function(data){
+        if (!data.erro) {
+            form.each(function(data){
+            });
+        }
+    });
+};
