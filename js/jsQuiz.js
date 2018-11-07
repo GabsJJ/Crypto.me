@@ -1,6 +1,7 @@
 var todasQuestoes = new Array();
 var questoes = new Array();
 const tamanho = 7;
+var acertos = 0;
 
 //Pegando informações do banco e mostrando-as
 function PegarBanco() 
@@ -68,10 +69,11 @@ function MostrarQuestoes()
 //Verificando se as respostas estão corretas
 function VerificarQuestoes()
 {
-	var inputField;
 	for(i = 0; i < tamanho; i++)
 	{
-		inputField = document.getElementById("inp"+ (i+1));
+		var inputField = document.getElementById("inp"+ (i+1));
+		var txt = document.getElementById("t" + (i + 1));
+
 		if(document.getElementById("t" + (i + 1)).value.toUpperCase() != questoes[i].resposta)
 		{
 			inputField.style.color = "red";
@@ -79,6 +81,18 @@ function VerificarQuestoes()
 		else
 		{
 			inputField.style.color = "green";
+			acertos++;
 		}
+
+		txt.disabled = true;
+
+		var acer = document.getElementById("acer");
+
+		acer.innerHTML = "Acertos: " + acertos + "/7";
+
+		if(acertos > 3)
+			acer.style.color = "green";
+		else
+			acer.style.color = "red";
 	}
 }

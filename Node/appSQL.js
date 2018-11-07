@@ -34,6 +34,10 @@ rota.get('/Quiz', (requisicao, resposta) =>{
 execSQL('SELECT * FROM Quiz', resposta);
 })
 
+rota.get('/Criptografia', (requisicao, resposta) => {
+execSQL('SELECT * FROM Criptografia', resposta);
+})
+
 rota.get('/QUsuario', (requisicao, resposta) =>{
 execSQL('SELECT * FROM Usuario', resposta);
 })
