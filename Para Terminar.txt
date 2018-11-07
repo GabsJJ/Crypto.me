@@ -1,3 +1,2 @@
 -Dicionar a logo
 -Tentar arrumar commits
--Adicionar coluna "eficacia" em criptoCategorias (e descomentar o código dos relatórios!)

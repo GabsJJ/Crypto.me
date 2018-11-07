@@ -75,7 +75,7 @@ function relacao2()
 
     for(i = 0; i < cripto.length; i++)
     {
-        //tabela.innerHTML += "<tr> <td>"+ cripto[i].nome +"</td> <td>"+ (categorias[cripto[i].idCategoria - 1].eficacia + efiDif[cripto[i].dificuldade - 1]) +"</td> </tr>";
+        tabela.innerHTML += "<tr> <td>"+ cripto[i].nome +"</td> <td>"+ (categorias[cripto[i].idCategoria - 1].eficacia + efiDif[cripto[i].dificuldade - 1]) +"</td> </tr>";
     }
 }
 
