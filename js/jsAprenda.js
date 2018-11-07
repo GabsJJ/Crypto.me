@@ -63,7 +63,7 @@ function PegarCriptos(response, id, descri)
 
         for(i = 0; i < arr2.length; i++)
         {
-            div2.innerHTML += "<a class='waves-effect waves-light btn-small' onclick='pegar = false; iniciar(" + arr2[i].id + ")'>"+arr2[i].nome+"</a> <br>"
+            div2.innerHTML += "<a class='waves-effect waves-light btn-small' onclick='pegar = false; iniciar(" + arr2[i].id + ")'>"+arr2[i].nome+"</a> <br><br>"
         }
     }
 }

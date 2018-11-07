@@ -72,3 +72,5 @@ insert into Quiz values(2,'Descriptografe "3-18-9-16-20-15-7-18-1-6-9-1" usando 
 insert into Quiz values(3,'Criptografe "Julio Cesar" usando a Cifra de Cesar com a rotação nº13', 'WHYVB PRFNE')
 insert into Quiz values(9,'Criptografe o número 25 usando o sistema Binário','11001')
 insert into Quiz values(10,'Descriptografe "01001111 01001100 01000001" no sistema Binário','OLA')
+
+select * from Usuario
