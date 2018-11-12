@@ -31,6 +31,12 @@ function VerficarCampos()
 	var s1 = document.getElementById("passwordR");
 	var s2 = document.getElementById("passwordRR");
 
+    if(s1.value == "" || s2.value == "" || document.getElementById("usernameR").value == "" || document.getElementById("email").value == "")
+    {
+        alert("Por favor, preencha os campos!");
+        return false;
+    }
+
 	if(s1.value != s2.value)
     {
 		alert("Senhas não são iguais!");
@@ -59,6 +65,12 @@ function verificarConta()
     var s;
     var use;
     var idd;
+
+    if(c1.value == "" || c2.value == "")
+    {
+        alert("Por favor, preencha os campos!");
+        return false;
+    }
 
     var achou = false;
     for(i = 0; i < users.length; i++)
