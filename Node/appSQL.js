@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const porta = 3000; //porta padrão
@@ -77,7 +77,7 @@ execSQL('SELECT * from Criptografia' + filtro, resposta);
 rota.post('/Acesso', (requisicao, resposta) => {
 var date = new Date();
 const i = requisicao.body.id;
-const d = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();  //Um mês atrás??
+const d = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();  //Um mês atrás??
 const h = date.getHours() + "";
 execSQL(`INSERT INTO Acesso(idUsuario, dataAcesso, horaAcesso) VALUES('${i}','${d}','${h}')`,resposta);
 })
