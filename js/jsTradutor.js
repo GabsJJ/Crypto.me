@@ -4,6 +4,9 @@ var alf = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
 
 function criptografar(mensagem, idCripto, c)
 {
+    //Declarando o modal
+    var modal = document.getElementById("mTxt");
+
     mensagem = mensagem.toUpperCase();
     var nMensagem = "";
     var chave = parseInt(document.getElementById('txtChave').value);
@@ -18,7 +21,10 @@ function criptografar(mensagem, idCripto, c)
             if(chave + "" != "NaN")
                 nMensagem = caesar(mensagem, chave);
             else
-                alert("Por favor, insira uma chave válida!");
+            {
+                modal.innerHTML = "Por favor, insira uma chave válida!";
+                $('.modal').modal('open');
+            }
             break;
 
         case "3":
@@ -35,6 +41,9 @@ function criptografar(mensagem, idCripto, c)
 
 function descriptografar(mensagem, idCripto, c)
 {
+    //Declarando o modal
+    var modal = document.getElementById("mTxt");
+
     mensagem = mensagem.toUpperCase();
     var nMensagem = "";
     var chave = parseInt(document.getElementById('txtChave').value);
@@ -49,7 +58,10 @@ function descriptografar(mensagem, idCripto, c)
             if(chave + "" != "NaN")
                 nMensagem = DEScaesar(mensagem, chave);
             else
-                alert("Por favor, insira uma chave válida!");
+            {
+                modal.innerHTML = "Por favor, insira uma chave válida!";
+                $('.modal').modal('open');
+            }
             break;
 
         case "3":
@@ -67,6 +79,9 @@ function descriptografar(mensagem, idCripto, c)
 /*Criptografa*/
 function caesar(mensagem, chave)
 {
+    //Declarando o modal
+    var modal = document.getElementById("mTxt");
+
     var input = mensagem;
     var outText = "";
     var sinal = 1;
@@ -93,7 +108,8 @@ function caesar(mensagem, chave)
             }
             else
             {
-                alert("Não inclua acentos/Caracteres especiais nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
+                modal.innerHTML = "Não inclua acentos/Caracteres especiais nas letras!"; //Se o caractere não estiver no vetor 'alfabeto' ele dispara um modal apontando o erro
+                $('.modal').modal('open');
                 outText = "";
                 break;  
             }
@@ -101,13 +117,19 @@ function caesar(mensagem, chave)
         }
     }
     else
-        alert("Insira uma chave menor que 26");
+    {
+        modal.innerHTML = "Insira uma chave menor que 26";
+        $('.modal').modal('open');
+    }
 
     return outText;
 }
 
 function cA1Z26 (mensagem)
 {
+    //Declarando o modal
+    var modal = document.getElementById("mTxt");
+
     var resul = "";
     var continuar = true;
 
@@ -227,7 +249,8 @@ function cA1Z26 (mensagem)
                 break;
 
             default:
-                alert("Por favor, não insira caractares que não sejam letras ou espaços!");
+                modal.innerHTML = "Por favor, não insira caractares que não sejam letras ou espaços!";
+                $('.modal').modal('open');
                 return " ";
                 break;
         }
@@ -285,6 +308,9 @@ function cBinario(mensagem)
 /*Descriptografar*/
 function DEScaesar(mensagem, chave)
 {
+    //Declarando o modal
+    var modal = document.getElementById("mTxt");
+
     var input = mensagem;
     var outText = "";
 
@@ -315,7 +341,8 @@ function DEScaesar(mensagem, chave)
         }
         else
         {
-            alert("Não inclua acentos/Caracteres especiais nas letras!"); //Se o caractere não estiver no vetor 'alfabeto' ele dispara um alert apontando o erro
+            modal.innerHTML = "Não inclua acentos/Caracteres especiais nas letras!"; //Se o caractere não estiver no vetor 'alfabeto' ele dispara um modal apontando o erro
+            $('.modal').modal('open');
             outText = "";
             break;  
         }
@@ -327,6 +354,9 @@ function DEScaesar(mensagem, chave)
 
 function DEScA1Z26(mensagem)
 {
+    //Declarando o modal
+    var modal = document.getElementById("mTxt");
+
     var result = "";
 
     while(mensagem != "")
@@ -344,7 +374,8 @@ function DEScA1Z26(mensagem)
 
             if(r == undefined)
             {
-                alert("A entrada possue caractares invalidos para esse tipo de criptografia!");
+                modal.innerHTML = "A entrada possue caractares invalidos para esse tipo de criptografia!";
+                $('.modal').modal('open');
                 return "";
             }
 
@@ -363,7 +394,8 @@ function DEScA1Z26(mensagem)
 
             if(r == undefined)
             {
-                alert("A entrada possue caractares invalidos para esse tipo de criptografia!");
+                modal.innerHTML = "A entrada possue caractares invalidos para esse tipo de criptografia!";
+                $('.modal').modal('open');
                 return "";
             }
 

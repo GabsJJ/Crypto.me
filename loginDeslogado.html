@@ -109,6 +109,16 @@
     </section>
   </div>
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h3 id="mHeader">Atenção!</h3>
+      <h5><p id="mTxt">É necessário logar antes de acessar as ferramentas do site</p></h5>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="mudarPagina();"><h6> OK </h6></a>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="page-footer grey darken-3">
@@ -144,5 +154,12 @@
         $('.sidenav').sidenav();
       });
    </script>
+
+    <script>
+    //Modal
+     $(document).ready(function(){
+      $('.modal').modal();
+     });
+    </script>
 	</body>
 </html>

@@ -1,4 +1,5 @@
 var users = new Array();
+var redirect = 0; //Indica se é necessário redirecionar a página
 
 function pegarUsers()
 {
@@ -27,39 +28,53 @@ function guardarUsers(response)
 //Criando uma conta
 function VerficarCampos()
 {
-	//Verificar senha
+    //Declarando o modal
+    var modal = document.getElementById("mTxt");
+    var mHeader = document.getElementById("mHeader");
+
+    //Verificar senha
 	var s1 = document.getElementById("passwordR");
 	var s2 = document.getElementById("passwordRR");
 
     if(s1.value == "" || s2.value == "" || document.getElementById("usernameR").value == "" || document.getElementById("email").value == "")
     {
-        alert("Por favor, preencha os campos!");
+        modal.innerHTML = "Por favor, preencha os campos!";
+        $('.modal').modal('open');
         return false;
     }
 
 	if(s1.value != s2.value)
     {
-		alert("Senhas não são iguais!");
+		modal.innerHTML = "Senhas não são iguais!";
+        $('.modal').modal('open');
         return false;
     }
 
     for(i = 0; i < users.length; i++)
         if(document.getElementById("email").value == users[i].email)
         {
-            alert("Email já usado!");
+            modal.innerHTML = "Email já usado!";
+            $('.modal').modal('open');
             return false;
         }
 
-    alert("Conta criada com sucesso!");
     pegarUsers();
     
-    red2($('#f2'));
-    window.location.href = "./principal.html"
+    redirect = 1;
+
+    mHeader.innerHTML = "Parabéns!";
+    modal.innerHTML = "Conta criada com sucesso!";
+    $('.modal').modal('open');
 }
 
 //Fazendo login
 function verificarConta()
 {
+    //Declarando o modal
+    var modal = document.getElementById("mTxt");
+    var mHeader = document.getElementById("mHeader");
+
+    //Verificando o login
     var c1 = document.getElementById("emailS");
     var c2 = document.getElementById("password");
     var s;
@@ -68,7 +83,8 @@ function verificarConta()
 
     if(c1.value == "" || c2.value == "")
     {
-        alert("Por favor, preencha os campos!");
+        modal.innerHTML = "Por favor, preencha os campos!";
+        $('.modal').modal('open');
         return false;
     }
 
@@ -87,23 +103,51 @@ function verificarConta()
 
     if(!achou)
     {
-        alert("Email não registrado!");
+        modal.innerHTML = "Email não registrado!";
+        $('.modal').modal('open');
         return false;
     }
 
     if(s + "" != c2.value + "")
     {
-        alert("Senha inválida!")
+        modal.innerHTML = "Senha inválida!";
+        $('.modal').modal('open');
         return false;
     }
 
     document.getElementById("id").value = idd + "";
 
-    alert("Bem-vindo(a) " + use + "!");
-    
-    red1($('#f1'));
-    window.location.href = "./principal.html"
+    redirect = 1;
 
+    mHeader.innerHTML = "Nos encontramos de novo";
+    modal.innerHTML = "Bem-vindo(a) " + use + "!";
+    $('.modal').modal('open');
+}
+
+function mudarPagina()
+{
+    if(redirect == 1)
+    {
+        red1($('#f1'));
+        window.location.href = "./principal.html";
+    }
+    else if(redirect == 2)
+    {
+        window.location.href = "./principalDeslogado.html";
+    }
+}
+
+function fazerLogoff()
+{
+    //Declarando o modal
+    var modal = document.getElementById("mTxt");
+    var mHeader = document.getElementById("mHeader");
+
+    redirect = 2;
+
+    mHeader.innerHTML = "Adeus";
+    modal.innerHTML = "Nos veremos em breve";
+    $('.modal').modal('open');
 }
 
 //Redirecionando

@@ -34,6 +34,10 @@ rota.get('/Quiz', (requisicao, resposta) =>{
 execSQL('SELECT * FROM Quiz', resposta);
 })
 
+rota.get('/Criptografia', (requisicao, resposta) => {
+execSQL('SELECT * FROM Criptografia', resposta);
+})
+
 rota.get('/QUsuario', (requisicao, resposta) =>{
 execSQL('SELECT * FROM Usuario', resposta);
 })
@@ -73,8 +77,7 @@ execSQL('SELECT * from Criptografia' + filtro, resposta);
 rota.post('/Acesso', (requisicao, resposta) => {
 var date = new Date();
 const i = requisicao.body.id;
-const d = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
+const d = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();  //Um mês atrás??
 const h = date.getHours() + "";
-requisicao.body.id = "";
 execSQL(`INSERT INTO Acesso(idUsuario, dataAcesso, horaAcesso) VALUES('${i}','${d}','${h}')`,resposta);
 })
