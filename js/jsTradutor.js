@@ -302,7 +302,7 @@ function cBinario(mensagem)
         resto = numAtual;
     }
 
-    return resto;
+    return resto.trim();
 }
 
 /*Descriptografar*/
@@ -410,37 +410,48 @@ function DEScA1Z26(mensagem)
 
 function DESbinario(mensagem)
 {
-    var palavraBinario  = "";
-    var umNumero        = 0;
-    var conv            = new Array();
-    var caracterAtual   = "";
-    var indPalavraAtual = 0;
-    var mensagemDes     = "";
-    var tamNum          = mensagem.length;
-
-    var i = 0;
-    while(i < tamNum)
+    var modal = document.getElementById("mTxt");
+    var msgTrim = parseInt(mensagem.trim());
+    if(!isNaN(msgTrim))
     {
-        palavraBinario += mensagem.substring(i,i+1);
-        caracterAtual      = mensagem.substring(i,i+1);
-        if(caracterAtual != " ")
+        var palavraBinario  = "";
+        var umNumero        = 0;
+        var conv            = new Array();
+        var caracterAtual   = "";
+        var indPalavraAtual = 0;
+        var mensagemDes     = "";
+        var tamNum          = mensagem.trim().length;
+        var i = 0;
+
+        while(i < tamNum)
         {
-            umNumero = parseInt(palavraBinario);
-            conv[indPalavraAtual] = parseInt(umNumero, 2);
-            i++;
+            palavraBinario += mensagem.trim().substring(i,i+1);
+            caracterAtual      = mensagem.trim().substring(i,i+1);
+            if(caracterAtual != " ")
+            {
+                umNumero = parseInt(palavraBinario);
+                conv[indPalavraAtual] = parseInt(umNumero, 2);
+                i++;
+            }
+            else
+            {
+                indPalavraAtual++;
+                palavraBinario = "";
+                i++;
+            }
         }
-        else
-        {
-            indPalavraAtual++;
-            palavraBinario = "";
-            i++;
-        }
+    
+        for(var ind = 0; ind < conv.length; ind++)
+            mensagemDes += String.fromCharCode(conv[ind]);
+
+        return mensagemDes;
     }
-    
-    for(var ind = 0; ind < conv.length; ind++)
-        mensagemDes += String.fromCharCode(conv[ind]);
-    
-    return mensagemDes;
+    else
+    {
+        modal.innerHTML = "A entrada possue caractares invalidos para esse tipo de criptografia!";
+        $('.modal').modal('open');
+        return "";
+    }
 }
 
 /*Funções da página*/
