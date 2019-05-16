@@ -85,44 +85,32 @@ function caesar(mensagem, chave)
     //Declarando o modal
     var modal = document.getElementById("mTxt");
 
-    var input = mensagem;
     var outText = "";
     var sinal = 1;
 
-    var tamanho = input.length;
-    var indiceDaLetraAtual;
+    var tamanho = mensagem.length;
     outText = "";
     var i = 0;
     
-    if(chave < 26)
-    {
-        while(i < tamanho){ 
-          if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
-          {
-              indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
-              outText += alf[(indiceDaLetraAtual + (chave * sinal)) % alf.length];
-              i++;
-          }
-          else{
-            if(input.substring(i,(i+1)) == " ")
-            {
-                outText += input.substring(i,(i+1));
+    //TURISTADAAAAAAAAAAAAAAA OUT
+    chave = chave % 26
+    while (i < tamanho) {
+        let letra = mensagem.substring(i, i + 1)
+        if (alf.includes(letra)) {
+            if(letra === " ") {
+                outText += letra;
                 i++;
+                continue;
             }
-            else
-            {
-                modal.innerHTML = "Não inclua acentos/Caracteres especiais nas letras!"; //Se o caractere não estiver no vetor 'alfabeto' ele dispara um modal apontando o erro
-                $('.modal').modal('open');
-                outText = "";
-                break;  
-            }
-          }
+
+            outText += String.fromCharCode(letra.charCodeAt(0) - 65 + chave) % 26)
+            i++;
+        } else {
+            modal.innerHTML = "Não inclua acentos/Caracteres especiais nas letras!"; //Se o caractere não estiver no vetor 'alfabeto' ele dispara um modal apontando o erro
+            $('.modal').modal('open');
+            outText = "";
+            break;
         }
-    }
-    else
-    {
-        modal.innerHTML = "Insira uma chave menor que 26";
-        $('.modal').modal('open');
     }
 
     return outText;
@@ -140,7 +128,7 @@ function cA1Z26 (mensagem)
         if (letra === ' ') {
             result = result.substring(0, result.length - 1);
             result += " ";
-        } else if (letra in alf) {
+        } else if (alf.includes(letra)) {
             result += (letra.charCodeAt(0) - 64).toString()
             resul += "-";
         } else {
