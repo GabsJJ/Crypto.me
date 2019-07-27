@@ -1,13 +1,16 @@
 /* Alfabeto */
-var alf = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S"
-          , "T", "U", "V", "W", "X", "Y", "Z"]; 
+let alf = []
+for (let i = 'A'.charCodeAt(0); i < 'z'.charCodeAt(0); i++) {
+    alf.push(String.fromCharCode(i)
+}
+
 
 function criptografar(mensagem, idCripto, c)
 {
     //Declarando o modal
     var modal = document.getElementById("mTxt");
 
-    mensagem = mensagem.toUpperCase();
+    mensagem = mensagem;
     var nMensagem = "";
     var chave = parseInt(document.getElementById('txtChave').value);
     
@@ -82,44 +85,32 @@ function caesar(mensagem, chave)
     //Declarando o modal
     var modal = document.getElementById("mTxt");
 
-    var input = mensagem;
     var outText = "";
     var sinal = 1;
 
-    var tamanho = input.length;
-    var indiceDaLetraAtual;
+    var tamanho = mensagem.length;
     outText = "";
     var i = 0;
     
-    if(chave < 26)
-    {
-        while(i < tamanho){ 
-          if(alf.includes(input.substring(i,(i+1)))) //Verifica se o caractere esta dentro do vetor alfabeto
-          {
-              indiceDaLetraAtual = alf.indexOf(input.substring(i,(i+1)));
-              outText += alf[(indiceDaLetraAtual + (chave * sinal)) % alf.length];
-              i++;
-          }
-          else{
-            if(input.substring(i,(i+1)) == " ")
-            {
-                outText += input.substring(i,(i+1));
+    //TURISTADAAAAAAAAAAAAAAA OUT
+    chave = chave % 26
+    while (i < tamanho) {
+        let letra = mensagem.substring(i, i + 1)
+        if (alf.includes(letra)) {
+            if(letra === " ") {
+                outText += letra;
                 i++;
+                continue;
             }
-            else
-            {
-                modal.innerHTML = "Não inclua acentos/Caracteres especiais nas letras!"; //Se o caractere não estiver no vetor 'alfabeto' ele dispara um modal apontando o erro
-                $('.modal').modal('open');
-                outText = "";
-                break;  
-            }
-          }
+
+            outText += String.fromCharCode(letra.charCodeAt(0) - 65 + chave) % 26)
+            i++;
+        } else {
+            modal.innerHTML = "Não inclua acentos/Caracteres especiais nas letras!"; //Se o caractere não estiver no vetor 'alfabeto' ele dispara um modal apontando o erro
+            $('.modal').modal('open');
+            outText = "";
+            break;
         }
-    }
-    else
-    {
-        modal.innerHTML = "Insira uma chave menor que 26";
-        $('.modal').modal('open');
     }
 
     return outText;
@@ -128,137 +119,26 @@ function caesar(mensagem, chave)
 function cA1Z26 (mensagem)
 {
     //Declarando o modal
-    var modal = document.getElementById("mTxt");
+    let modal = document.getElementById("mTxt");
 
-    var resul = "";
-    var continuar = true;
-
-    for(var i = 0; i < mensagem.length; i++)
-    {
+    let result = "";
+    for(var i = 0; i < mensagem.length; i++) {
         var letra = mensagem.charAt(i);
-        
-        switch(letra)
-        {
-            case "A":
-                resul += "1";
-                break;
-                
-            case "B":
-                resul += "2";
-                break;
-            
-            case "C":
-                resul += "3";
-                break;
-                
-            case "D":
-                resul += "4";
-                break;
-                
-            case "E":
-                resul += "5";
-                break;
-                
-            case "F":
-                resul += "6";
-                break;
-                
-            case "G":
-                resul += "7";
-                break;
-                
-            case "H":
-                resul += "8";
-                break;
-                
-            case "I":
-                resul += "9";
-                break;
-                
-            case "J":
-                resul += "10";
-                break;
-                
-            case "K":
-                resul += "11";
-                break;
-                
-            case "L":
-                resul += "12";
-                break;
-                
-            case "M":
-                resul += "13";
-                break;
-                
-            case "N":
-                resul += "14";
-                break;
-                
-            case "O":
-                resul += "15";
-                break;
-                
-            case "P":
-                resul += "16";
-                break;
-                
-            case "Q":
-                resul += "17";
-                break;
-                
-            case "R":
-                resul += "18";
-                break;
-                
-            case "S":
-                resul += "19";
-                break;
-                
-            case "T":
-                resul += "20";
-                break;
-                
-            case "U":
-                resul += "21";
-                break;
-                
-            case "V":
-                resul += "22";
-                break;
-                
-            case "W":
-                resul += "23";
-                break;
-                
-            case "X":
-                resul += "24";
-                break;
-                
-            case "Y":
-                resul += "25";
-                break;
-                
-            case "Z":
-                resul += "26";
-                break;
 
-            case " ":
-                resul = resul.substring(0, resul.length - 1);
-                resul += " ";
-                break;
-
-            default:
-                modal.innerHTML = "Por favor, não insira caractares que não sejam letras ou espaços!";
-                $('.modal').modal('open');
-                return " ";
-                break;
-        }
-        if(letra != " ")
+        if (letra === ' ') {
+            result = result.substring(0, result.length - 1);
+            result += " ";
+        } else if (alf.includes(letra)) {
+            result += (letra.charCodeAt(0) - 64).toString()
             resul += "-";
+        } else {
+            modal.innerHTML = "Por favor, não insira caractares que não sejam letras ou espaços!";
+            $('.modal').modal('open');
+            return " ";
+        }
     }
 
-    return resul.substring(0, resul.length - 1);
+    return result.substring(0, result.length - 1);
 }
 
 function cBinario(mensagem)

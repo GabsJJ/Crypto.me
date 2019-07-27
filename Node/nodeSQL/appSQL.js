@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const porta = 3000; //porta padrão
 const sql = require('mssql');
-const conexaoStr = "Server=regulus;Database=PR118196;User Id=PR118196;Password=PR118196;";
+const conexaoStr = "Server=regulus;Database=PR118196;User Id=PR118196;Password=PR118196;"; //😊😊😊😊
 
 //conexao com BD
 sql.connect(conexaoStr)
